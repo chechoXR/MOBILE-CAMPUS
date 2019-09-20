@@ -27,42 +27,42 @@
             android:text="@string/bienvenido"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="@color/azul_oscuro"
+            android:textColor="@color/colorPrimary"
             android:textSize="30sp"
             android:textStyle="bold"
             android:typeface="normal" />
 
         <EditText
-            android:id="@+id/usuario"
+            android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:autofillHints=""
             android:ems="10"
             android:gravity="center_vertical|center_horizontal"
             android:hint="Usuario"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:autofillHints="" />
 
         <EditText
-            android:id="@+id/contrasena"
+            android:id="@+id/editText2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
             android:ems="10"
             android:gravity="center_horizontal"
             android:hint="@string/contrasena"
-            android:importantForAutofill="no"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:importantForAutofill="no" />
 
         <Button
-            android:id="@+id/boton_ingresar"
+            android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
-            android:background="@color/azul_oscuro"
+            android:background="@color/colorPrimary"
             android:text="@string/ingresar"
             android:textColor="#ffffff"
             android:textSize="18sp"
