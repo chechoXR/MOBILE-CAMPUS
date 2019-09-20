@@ -1,0 +1,93 @@
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["css-shim-js"],{
+
+/***/ "./node_modules/@ionic/core/dist/esm/polyfills/css-shim.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@ionic/core/dist/esm/polyfills/css-shim.js ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*
+Extremely simple css parser. Intended to be not more than what we need
+and definitely not necessarily correct =).
+*/
+/** @unrestricted */
+var StyleNode = /** @class */ (function () {
+    function StyleNode() {
+        this.start = 0;
+        this.end = 0;
+        this.previous = null;
+        this.parent = null;
+        this.rules = null;
+        this.parsedCssText = '';
+        this.cssText = '';
+        this.atRule = false;
+        this.type = 0;
+        this.keyframesName = '';
+        this.selector = '';
+        this.parsedSelector = '';
+    }
+    return StyleNode;
+}());
+// given a string of css, return a simple rule tree
+/**
+ * @param {string} text
+ * @return {StyleNode}
+ */
+function parse(text) {
+    text = clean(text);
+    return parseCss(lex(text), text);
+}
+// remove stuff we don't care about that may hinder parsing
+/**
+ * @param {string} cssText
+ * @return {string}
+ */
+function clean(cssText) {
+    return cssText.replace(RX.comments, '').replace(RX.port, '');
+}
+// super simple {...} lexer that returns a node tree
+/**
+ * @param {string} text
+ * @return {StyleNode}
+ */
+function lex(text) {
+    var root = new StyleNode();
+    root['start'] = 0;
+    root['end'] = text.length;
+    var n = root;
+    for (var i = 0, l = text.length; i < l; i++) {
+        if (text[i] === OPEN_BRACE) {
+            if (!n['rules']) {
+                n['rules'] = [];
+            }
+            var p = n;
+            var previous = p['rules'][p['rules'].length - 1] || null;
+            n = new StyleNode();
+            n['start'] = i + 1;
+            n['parent'] = p;
+            n['previous'] = previous;
+            p['rules'].push(n);
+        }
+        else if (text[i] === CLOSE_BRACE) {
+            n['end'] = i + 1;
+            n = n['parent'] || root;
+        }
+    }
+    return root;
+}
+// add selectors/cssText to node tree
+/**
+ * @param {StyleNode} node
+ * @param {string} text
+ * @return {StyleNode}
+ */
+function parseCss(node, text) {
+    var t = text.substring(node['start'], node['end'] - 1);
+    node['parsedCssText'] = node['cssText'] = t.trim();
+    if (node.parent) {
+        var ss = node.previous ? node.previous['end'] : node.parent['start'];
+        t = text.substring(ss, node['start'] - 1);
+        t = _expandUnicodeEscapes(t);
+        t = t.replace(RX.multipleSpaces, ' ');
+        // TODO(sorvell): ad hoc; make selector in
