@@ -1,5 +1,5 @@
 # MOBILE-CAMPUS
 Autores
 -Felipe Barragán Núñez
--Jose Luis Novoa
+-Jose Luis Novoa N
 -Sergio Ramirez
