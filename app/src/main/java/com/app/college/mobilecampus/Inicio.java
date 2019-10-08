@@ -6,21 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Login extends AppCompatActivity {
+public class Inicio extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        Button btn = findViewById(R.id.boton_ingresar);
+        setContentView(R.layout.activity_inicio);
+        Button btn = findViewById(R.id.button_consultaSem);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(),Inicio.class);
+                Intent intent = new Intent (v.getContext(),Semilleros.class);
                 startActivity(intent);
             }
         });
-
     }
 }
