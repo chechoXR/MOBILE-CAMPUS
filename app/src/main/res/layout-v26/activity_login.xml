@@ -27,7 +27,7 @@
             android:text="@string/bienvenido"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:background="@color/azul_oscuro"
+            android:textColor="@color/azul_oscuro"
             android:textSize="30sp"
             android:textStyle="bold"
             android:typeface="normal" />
