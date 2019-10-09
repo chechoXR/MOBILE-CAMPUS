@@ -15,9 +15,12 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:srcCompat="@drawable/logo_poli"
-            android:contentDescription="TODO" />
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:contentDescription="TODO"
+            app:srcCompat="@drawable/logo_poli" />
 
         <TextView
             android:id="@+id/textView"
@@ -55,7 +58,8 @@
             android:gravity="center_horizontal"
             android:hint="@string/contrasena"
             android:importantForAutofill="no"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:password="true" />
 
         <Button
             android:id="@+id/boton_ingresar"
