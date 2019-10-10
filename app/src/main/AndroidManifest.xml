@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Horario"></activity>
-        <activity android:name=".Bienestar" />
-        <activity android:name=".Semilleros" />
-        <activity android:name=".Inicio" />
-        <activity android:name=".Login">
+
+        <activity android:name=".Bienestar" android:screenOrientation="portrait"></activity>
+        <activity android:name=".Semilleros" android:screenOrientation="portrait"></activity>
+        <activity android:name=".Inicio" android:screenOrientation="portrait"/>
+        <activity android:name=".Login" android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
