@@ -68,6 +68,7 @@
             android:layout_margin="30dp"
             android:background="@color/azul_oscuro"
             android:text="@string/ingresar"
+            android:onClick="click"
             android:textColor="#ffffff"
             android:textSize="18sp"
             android:textStyle="bold" />
