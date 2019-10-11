@@ -7,14 +7,33 @@
     android:background="@color/blanco"
     tools:context=".ui.acercaDe.AcercaDeLaAppFragment">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/acercade" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:src="@drawable/logo_poli"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="318dp"
+            android:layout_height="370dp"
+            android:gravity="center|center_vertical"
+            android:lines="@android:integer/config_longAnimTime"
+            android:text="Mobile Campus\n\nConsulta información de créditos, semilleros,\ncalendario académico, notas,\nactividades de bienestar.\nY progreso de las mismas.\n\nDesarrollada por:\nBrayan Felipe Barragán Núñez\nJaime Stiven León Tunjano\nJosé Luis Novoa Nieto\nCamilo Andrés Piza Hernández\nSergio Esteban Ramírez Cuesta\nJuan Pablo Salamanca Cortés"
+            android:textColor="@color/azul_oscuro"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
