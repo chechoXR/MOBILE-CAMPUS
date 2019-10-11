@@ -15,8 +15,8 @@
 
 
         <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
 
 
             <ImageView
@@ -115,7 +115,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/button_consultaHora"
                 android:background="@color/azul_claro"
                 android:textColor="#ffffff"/>
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
     <FrameLayout

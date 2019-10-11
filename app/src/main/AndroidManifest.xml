@@ -18,16 +18,12 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-        <activity android:name=".CalculateNote"></activity>
-        <activity android:name=".Bienestar" android:screenOrientation="portrait"></activity>
-        <activity android:name=".Semilleros" android:screenOrientation="portrait"></activity>
-        <activity android:name=".Login" android:screenOrientation="portrait">
-        <activity android:name=".Inicio" android:screenOrientation="portrait"/>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
+
 
 </manifest>

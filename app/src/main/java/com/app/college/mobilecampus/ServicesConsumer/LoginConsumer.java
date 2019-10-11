@@ -14,16 +14,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.app.college.mobilecampus.Inicio;
+import com.app.college.mobilecampus.MainActivity;
+import com.app.college.mobilecampus.ui.home.*;
 import com.app.college.mobilecampus.Model.Estudiante;
+import com.app.college.mobilecampus.ui.home.HomeFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static android.support.v4.content.ContextCompat.getSystemService;
 
 public class LoginConsumer {
 
@@ -67,7 +67,7 @@ public class LoginConsumer {
                                     String usuario = jsonObject.getString("usuario");
                                     estudiante = new Estudiante(nombre, apellido, email, usuario);
                                     Toast.makeText(context.getApplicationContext(), "Bienvenido " + nombre, Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(context, Inicio.class);
+                                    Intent intent = new Intent(context, MainActivity.class);
                                     context.startActivity(intent);
                                 }
                             } catch (JSONException e) {
