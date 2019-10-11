@@ -37,13 +37,15 @@
                 android:id="@+id/button_calendarioAcademico"
                 android:layout_width="180dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:text="Calendario Academico"
                 android:onClick="calendario"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
 
             <Button
                 android:id="@+id/button_actividadesBienestar"
@@ -55,7 +57,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_calendarioAcademico" />
+                app:layout_constraintTop_toBottomOf="@+id/button_calendarioAcademico"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
 
             <Button
                 android:id="@+id/button_consultaCreditos"
@@ -67,7 +71,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_actividadesBienestar" />
+                app:layout_constraintTop_toBottomOf="@+id/button_actividadesBienestar"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
 
             <Button
                 android:id="@+id/button_consultaSem"
@@ -79,7 +85,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_consultaCreditos" />
+                app:layout_constraintTop_toBottomOf="@+id/button_consultaCreditos"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
 
             <Button
                 android:id="@+id/button_consultaHora"
@@ -91,7 +99,9 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_consultaSem" />
+                app:layout_constraintTop_toBottomOf="@+id/button_consultaSem"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
 
             <Button
                 android:id="@+id/button_logOut"
@@ -102,8 +112,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_consultaHora" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                app:layout_constraintTop_toBottomOf="@+id/button_consultaHora"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
+        </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
     <FrameLayout
