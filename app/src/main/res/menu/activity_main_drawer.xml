@@ -47,4 +47,18 @@
         </menu>
     </item>
 
+
+    <item android:title="About">
+
+        <menu>
+            <item
+                android:id=""
+                android:icon="@drawable/ic_format_list_numbered"
+                android:title="@string/menu_about" />
+
+        </menu>
+
+
+    </item>
+
 </menu>
