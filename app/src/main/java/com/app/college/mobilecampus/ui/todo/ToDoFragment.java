@@ -33,27 +33,6 @@ public class ToDoFragment extends Fragment {
 
 
 
-        //_______________________________-
-
-
-        recyclerView = (RecyclerView) getView().findViewById(R.id.recycler_view);
-
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        recyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
-        //layoutManager = new LinearLayoutManager(this);
-        //recyclerView.setLayoutManager(layoutManager);
-
-        // specify an adapter (see also next example)
-        //mAdapter = new MyAdapter(myDataset);
-        //recyclerView.setAdapter(mAdapter);
-
-
-
-        //_______________________________-
-
 
         return root;
     }
