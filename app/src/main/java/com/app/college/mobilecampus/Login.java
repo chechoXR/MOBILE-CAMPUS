@@ -1,13 +1,13 @@
 package com.app.college.mobilecampus;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +26,9 @@ public class Login extends AppCompatActivity {
     }
 
     public void click (View view){
-        Toast t = Toast.makeText(this,"click",Toast.LENGTH_LONG);
-        t.show();
-        startActivity(new Intent(this,Inicio.class));
+
+        startActivity(new Intent(this,MainActivity.class));
 
     }
+
 }
