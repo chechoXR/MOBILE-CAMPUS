@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Inicio">
+    android:layout_height="match_parent">
+
 
 
     <ScrollView
@@ -13,9 +13,11 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
-        <android.support.constraint.ConstraintLayout
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
 
             <ImageView
                 android:id="@+id/imageView"
@@ -37,6 +39,7 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="30dp"
                 android:text="Calendario Academico"
+                android:onClick="calendario"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +53,7 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="40dp"
                 android:text="Actividades de Bienestar"
+                android:onClick="bienestar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -63,6 +67,7 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="40dp"
                 android:text="Consulta de Creditos"
+                android:onClick="creditos"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +81,7 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="40dp"
                 android:text="Consulta de Semilleros"
+                android:onClick="semilleros"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +95,7 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="40dp"
                 android:text="Consulta tu Horario"
+                android:onClick="horario"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -126,4 +133,4 @@
     </FrameLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
