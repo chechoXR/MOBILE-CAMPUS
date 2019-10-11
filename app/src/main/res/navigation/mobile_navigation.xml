@@ -82,6 +82,7 @@
         tools:layout="@layout/horario_fragment" />
 
                  <!--Extras -->
+
     <fragment
         android:id="@+id/nav_todo"
         android:name="com.app.college.mobilecampus.ui.todo.ToDoFragment"
@@ -93,6 +94,12 @@
         android:name="com.app.college.mobilecampus.ui.calcularNota.NotaFragment"
         android:label="@string/menu_calcular_nota"
         tools:layout="@layout/fragment_nota" />
+        <!--About -->
 
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.app.college.mobilecampus.ui.acercaDe.AcercaDeLaAppFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/acerca_de_la_app_fragment" />
 
 </navigation>
