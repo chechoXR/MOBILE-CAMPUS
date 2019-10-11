@@ -6,6 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 import android.widget.Toast;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -15,8 +16,10 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.app.college.mobilecampus.Inicio;
 import com.app.college.mobilecampus.Model.Estudiante;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +30,7 @@ public class LoginConsumer {
     private static String LOGIN_REQUEST = "https://campus-movil-255322.appspot.com/login/estudiante";
     public   Estudiante estudiante;
     private Context context;
+
 
     public LoginConsumer(Context context){
         this.context=context;
@@ -48,6 +52,7 @@ public class LoginConsumer {
     public void loginRequest(final String email, final String password) {
 
         if (checkConectivity()) {
+
             StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_REQUEST,
                     new Response.Listener<String>() {
                         @Override
@@ -88,5 +93,6 @@ public class LoginConsumer {
         } else {
             Toast.makeText(context.getApplicationContext(), "Error de conexión ", Toast.LENGTH_LONG).show();
         }
+
     }
 }

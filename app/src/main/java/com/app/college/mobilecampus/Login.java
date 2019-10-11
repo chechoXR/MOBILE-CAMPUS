@@ -33,6 +33,12 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 checkUser(username.getText().toString().trim(),password.getText().toString().trim());
+
+                submit.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.GONE);
+                password.setText("");
+
+
             }
         });
     }
