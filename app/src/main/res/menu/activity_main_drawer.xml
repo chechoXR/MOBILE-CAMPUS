@@ -52,8 +52,8 @@
 
         <menu>
             <item
-                android:id=""
-                android:icon="@drawable/ic_format_list_numbered"
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_info"
                 android:title="@string/menu_about" />
 
         </menu>
