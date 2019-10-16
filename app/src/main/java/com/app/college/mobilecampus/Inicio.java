@@ -16,6 +16,7 @@ public class Inicio extends AppCompatActivity {
         setContentView(R.layout.activity_inicio);
         Button btnSem = findViewById(R.id.button_consultaSem);
         Button btnCal = findViewById(R.id.button_calendarioAcademico);
+        Button btnBien = findViewById(R.id.button_actividadesBienestar);
         btnSem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,6 +35,11 @@ public class Inicio extends AppCompatActivity {
                 fragmentTransaction.commit();
             }
         });
+        btnBien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
     }
 }
