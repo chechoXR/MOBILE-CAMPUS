@@ -3,9 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MOBILE-CAMPUS.iml" filepath="$PROJECT_DIR$/MOBILE-CAMPUS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/MOBILE-CAMPUS-app.iml" filepath="$PROJECT_DIR$/app/MOBILE-CAMPUS-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Repositorios Git-MOBILE-CAMPUS.iml" filepath="$PROJECT_DIR$/Repositorios Git-MOBILE-CAMPUS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Repo-MOBILE-CAMPUS.iml" filepath="$PROJECT_DIR$/Repo-MOBILE-CAMPUS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
