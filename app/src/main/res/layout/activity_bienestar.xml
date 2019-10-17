@@ -4,70 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:visibility="visible"
     tools:context=".Bienestar">
+
+    <Button
+        android:id="@+id/button_Regresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="REGRESAR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editText_barraBusqueda"
+        android:layout_width="311dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Buscar"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton_butonBuscar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_titulo" />
+
+    <ImageButton
+        android:id="@+id/imageButton_butonBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText_barraBusqueda"
+        app:srcCompat="@android:drawable/ic_menu_search" />
 
     <ImageView
         android:id="@+id/imageView_logo"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:contentDescription="TODO"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_poli" />
 
-    <TextView
-        android:id="@+id/textView_titulo"
-        android:layout_width="337dp"
-        android:layout_height="118dp"
-        android:layout_marginBottom="16dp"
-        android:text="BIENESTAR UNIVERSITARIO"
-        android:textAlignment="center"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText_barraBusqueda"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView_logo" />
-
-    <EditText
-        android:id="@+id/editText_barraBusqueda"
-        android:layout_width="314dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="448dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Buscar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton_butonBuscar"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/editText_barraBusqueda"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.631"
-        app:layout_constraintStart_toEndOf="@+id/editText_barraBusqueda"
-        app:layout_constraintTop_toTopOf="@+id/editText_barraBusqueda"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@android:drawable/ic_menu_search" />
-
     <ScrollView
-        android:layout_width="354dp"
-        android:layout_height="342dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_Regresar"
+        android:id="@+id/scrollView2"
+        android:layout_width="392dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.649"
+        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/editText_barraBusqueda">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -80,7 +79,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginBottom="16dp"
                 android:text="Nombre"
-                android:textSize="20dp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -88,15 +87,19 @@
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/button_Regresar"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView_titulo"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="REGRESAR"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="BIENESTAR UNIVERSITARIO"
+        android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_logo" />
 
 </android.support.constraint.ConstraintLayout>
