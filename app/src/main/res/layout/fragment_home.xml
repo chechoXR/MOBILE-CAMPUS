@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginStart="5dp"
+                android:contentDescription="TODO"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/button_actividadesBienestar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo_poli" />
+
+            <Button
+                android:id="@+id/button_calendarioAcademico"
+                android:layout_width="180dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="30dp"
+                android:text="Calendario Academico"
+                android:onClick="calendario"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
+
+            <Button
+                android:id="@+id/button_actividadesBienestar"
+                android:layout_width="180dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="40dp"
+                android:text="Actividades de Bienestar"
+                android:onClick="bienestar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_calendarioAcademico"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
+
+            <Button
+                android:id="@+id/button_consultaCreditos"
+                android:layout_width="180dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="40dp"
+                android:text="Consulta de Creditos"
+                android:onClick="creditos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_actividadesBienestar"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
+
+            <Button
+                android:id="@+id/button_consultaSem"
+                android:layout_width="180dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="40dp"
+                android:text="Consulta de Semilleros"
+                android:onClick="semilleros"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_consultaCreditos"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
+
+            <Button
+                android:id="@+id/button_consultaHora"
+                android:layout_width="180dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="40dp"
+                android:text="Consulta tu Horario"
+                android:onClick="horario"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_consultaSem"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
+
+            <Button
+                android:id="@+id/button_logOut"
+                android:layout_width="180dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="40dp"
+                android:text="Log Out"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_consultaHora"
+                android:background="@color/azul_claro"
+                android:textColor="#ffffff"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

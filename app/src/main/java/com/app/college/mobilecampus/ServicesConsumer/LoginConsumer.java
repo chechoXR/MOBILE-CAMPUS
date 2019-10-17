@@ -1,10 +1,16 @@
+
 package com.app.college.mobilecampus.ServicesConsumer;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -14,16 +20,18 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.app.college.mobilecampus.Inicio;
+import com.app.college.mobilecampus.MainActivity;
+import com.app.college.mobilecampus.Login;
+import com.app.college.mobilecampus.MainActivity;
 import com.app.college.mobilecampus.Model.Estudiante;
+import com.app.college.mobilecampus.R;
+import com.app.college.mobilecampus.Utils.utils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static android.support.v4.content.ContextCompat.getSystemService;
 
 public class LoginConsumer {
 
@@ -34,6 +42,7 @@ public class LoginConsumer {
 
     public LoginConsumer(Context context){
         this.context=context;
+
     }
 
     private  boolean checkConectivity(){
@@ -48,6 +57,8 @@ public class LoginConsumer {
             connected = false;
         return connected;
     }
+
+
 
     public void loginRequest(final String email, final String password) {
 
@@ -66,18 +77,20 @@ public class LoginConsumer {
                                     String email = jsonObject.getString("email");
                                     String usuario = jsonObject.getString("usuario");
                                     estudiante = new Estudiante(nombre, apellido, email, usuario);
-                                    Toast.makeText(context.getApplicationContext(), "Bienvenido " + nombre, Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(context, Inicio.class);
+                                    utils.showToast("Bienvenido " + nombre,context.getApplicationContext());
+                                    Intent intent = new Intent(context, MainActivity.class);
                                     context.startActivity(intent);
                                 }
                             } catch (JSONException e) {
-                                Toast.makeText(context.getApplicationContext(), "Error de autenticacion", Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(context, Login.class);
+                                context.startActivity(intent);
+                                utils.showToast("Error de autenticacion",context.getApplicationContext());
                             }
                         }
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(context.getApplicationContext(), "Error en la peticion", Toast.LENGTH_LONG).show();
+                    utils.showToast("Error en la peticion",context.getApplicationContext());
                 }
             }) {
                 @Override
@@ -91,7 +104,7 @@ public class LoginConsumer {
             RequestQueue requestQueue = Volley.newRequestQueue(context);
             requestQueue.add(stringRequest);
         } else {
-            Toast.makeText(context.getApplicationContext(), "Error de conexión ", Toast.LENGTH_LONG).show();
+            utils.showToast("Error de conexión ",context.getApplicationContext());
         }
 
     }
