@@ -47,6 +47,13 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
 
+        <action android:id="@+id/action_home_to_requisitos"
+            app:destination="@id/nav_requisitos"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
     </fragment>
 
 
@@ -80,6 +87,12 @@
         android:name="com.app.college.mobilecampus.ui.horario.HorarioFragment"
         android:label="@string/menu_horario"
         tools:layout="@layout/horario_fragment" />
+
+    <fragment
+        android:id="@+id/nav_requisitos"
+        android:name="com.app.college.mobilecampus.ui.requisitosGrado.fragment_requisitosdegrado"
+        android:label="@string/menu_requisitos"
+        tools:layout="@layout/fragment_requisitosdegrado" />
 
                  <!--Extras -->
 
