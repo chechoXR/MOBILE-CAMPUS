@@ -1,0 +1,7 @@
+package com.app.college.mobilecampus.ui.semilleros;
+
+import androidx.lifecycle.ViewModel;
+
+public class SemillerosViewModel extends ViewModel {
+    // TODO: Implement the ViewModel
+}
