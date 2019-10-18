@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_calendario, R.id.nav_bienestar,
-                R.id.nav_creditos, R.id.nav_semilleros, R.id.nav_horario, R.id.nav_todo, R.id.nav_calcular_nota)
+                R.id.nav_creditos, R.id.nav_semilleros, R.id.nav_horario, R.id.nav_todo,
+                R.id.nav_calcular_nota, R.id.nav_requisitos)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -88,6 +89,11 @@ public class MainActivity extends AppCompatActivity {
     public void horario (View view){
 
         Navigation.findNavController(view).navigate(R.id.action_home_to_horario);
+    }
+
+    public void requisitos (View view){
+
+        Navigation.findNavController(view).navigate(R.id.action_home_to_requisitos);
     }
 
 

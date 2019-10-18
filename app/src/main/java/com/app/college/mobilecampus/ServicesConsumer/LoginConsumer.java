@@ -50,7 +50,6 @@ public class LoginConsumer {
         ConnectivityManager connectivityManager = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
                 connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-            //we are connected to a network
             connected = true;
         }
         else
@@ -78,12 +77,10 @@ public class LoginConsumer {
                                     String usuario = jsonObject.getString("usuario");
                                     estudiante = new Estudiante(nombre, apellido, email, usuario);
                                     utils.showToast("Bienvenido " + nombre,context.getApplicationContext());
-                                    Intent intent = new Intent(context, MainActivity.class);
-                                    context.startActivity(intent);
+                                   nextStep(true);
                                 }
                             } catch (JSONException e) {
-                                Intent intent = new Intent(context, Login.class);
-                                context.startActivity(intent);
+                                nextStep(false);
                                 utils.showToast("Error de autenticacion",context.getApplicationContext());
                             }
                         }
@@ -91,6 +88,7 @@ public class LoginConsumer {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     utils.showToast("Error en la peticion",context.getApplicationContext());
+                    nextStep(false);
                 }
             }) {
                 @Override
@@ -104,8 +102,27 @@ public class LoginConsumer {
             RequestQueue requestQueue = Volley.newRequestQueue(context);
             requestQueue.add(stringRequest);
         } else {
-            utils.showToast("Error de conexión ",context.getApplicationContext());
+            utils.showToast("Error de conexión, verifica conexión a internet ",context.getApplicationContext());
+            nextStep(false);
         }
-
     }
+
+    private void nextStep(boolean success){
+
+        try {
+            if(success){
+                Intent intent = new Intent(context, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                context.startActivity(intent);
+            }else{
+                Intent intent = new Intent(context, Login.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                context.startActivity(intent);
+            }
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+            utils.showToast("Error interno",context.getApplicationContext());
+        }
+    }
+
 }
