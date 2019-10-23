@@ -20,17 +20,14 @@
             android:id="@+id/nav_creditos"
             android:icon="@drawable/ic_equalizer"
             android:title="@string/menu_creditos" />
-
         <item
             android:id="@+id/nav_semilleros"
             android:icon="@drawable/ic_search"
             android:title="@string/menu_semilleros" />
-
         <item
             android:id="@+id/nav_horario"
             android:icon="@drawable/ic_schedule"
             android:title="@string/menu_horario" />
-
         <item
             android:id="@+id/nav_requisitos"
             android:icon="@drawable/ic_info"
@@ -44,7 +41,6 @@
                 android:id="@+id/nav_todo"
                 android:icon="@drawable/ic_format_list_numbered"
                 android:title="@string/menu_todo" />
-
             <item
                 android:id="@+id/nav_calcular_nota"
                 android:icon="@drawable/ic_star"
@@ -53,16 +49,19 @@
     </item>
 
 
-    <item android:title="About">
+    <item android:title="Herramientas">
 
         <menu>
             <item
                 android:id="@+id/nav_about"
                 android:icon="@drawable/ic_info"
                 android:title="@string/menu_about" />
+            <item
+                android:id="@+id/nav_configuracion"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/menu_configuracion" />
 
         </menu>
-
 
     </item>
 
