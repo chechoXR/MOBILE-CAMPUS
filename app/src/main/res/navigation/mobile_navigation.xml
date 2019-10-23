@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.app.college.mobilecampus.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+
+        <action android:id="@+id/action_home_to_calendario"
+        app:destination="@id/nav_calendario"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
+        <action android:id="@+id/action_home_to_bienestar"
+            app:destination="@id/nav_bienestar"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
+        <action android:id="@+id/action_home_to_creditos"
+            app:destination="@id/nav_creditos"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
+        <action android:id="@+id/action_home_to_semilleros"
+            app:destination="@id/nav_semilleros"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
+        <action android:id="@+id/action_home_to_horario"
+            app:destination="@id/nav_horario"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
+        <action android:id="@+id/action_home_to_requisitos"
+            app:destination="@id/nav_requisitos"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/nav_calendario"
+        android:name="com.app.college.mobilecampus.ui.calendario.CalendarioFragment"
+        android:label="@string/menu_calendario"
+        tools:layout="@layout/fragment_calendario" />
+
+    <fragment
+        android:id="@+id/nav_bienestar"
+        android:name="com.app.college.mobilecampus.ui.bienestar.BienestarFragment"
+        android:label="@string/menu_bienestar"
+        tools:layout="@layout/fragment_bienestar" />
+
+    <fragment
+        android:id="@+id/nav_creditos"
+        android:name="com.app.college.mobilecampus.ui.creditos.CreditosFragment"
+        android:label="@string/menu_creditos"
+        tools:layout="@layout/fragment_creditos" />
+
+    <fragment
+        android:id="@+id/nav_semilleros"
+        android:name="com.app.college.mobilecampus.ui.semilleros.SemillerosFragment"
+        android:label="@string/menu_semilleros"
+        tools:layout="@layout/semilleros_fragment" />
+
+    <fragment
+        android:id="@+id/nav_horario"
+        android:name="com.app.college.mobilecampus.ui.horario.HorarioFragment"
+        android:label="@string/menu_horario"
+        tools:layout="@layout/horario_fragment" />
+
+    <fragment
+        android:id="@+id/nav_requisitos"
+        android:name="com.app.college.mobilecampus.ui.requisitosGrado.fragment_requisitosdegrado"
+        android:label="@string/menu_requisitos"
+        tools:layout="@layout/fragment_requisitosdegrado" />
+
+                 <!--Extras -->
+
+    <fragment
+        android:id="@+id/nav_todo"
+        android:name="com.app.college.mobilecampus.ui.todo.ToDoFragment"
+        android:label="@string/menu_todo"
+        tools:layout="@layout/fragment_todo" />
+
+    <fragment
+        android:id="@+id/nav_calcular_nota"
+        android:name="com.app.college.mobilecampus.ui.calcularNota.NotaFragment"
+        android:label="@string/menu_calcular_nota"
+        tools:layout="@layout/fragment_nota" />
+        <!--About -->
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.app.college.mobilecampus.ui.acercaDe.AcercaDeLaAppFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/acerca_de_la_app_fragment" />
+
+</navigation>
