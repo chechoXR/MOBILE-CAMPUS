@@ -1,8 +1,10 @@
 
 package com.app.college.mobilecampus.ServicesConsumer;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
@@ -26,6 +28,8 @@ import com.app.college.mobilecampus.MainActivity;
 import com.app.college.mobilecampus.Model.Estudiante;
 import com.app.college.mobilecampus.R;
 import com.app.college.mobilecampus.Utils.utils;
+import com.app.college.mobilecampus.session.database.UserSessionDbHelper;
+import com.app.college.mobilecampus.session.database.UserSessionEntry;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,13 +40,12 @@ import java.util.Map;
 public class LoginConsumer {
 
     private static String LOGIN_REQUEST = "https://campus-movil-255322.appspot.com/login/estudiante";
-    public   Estudiante estudiante;
-    private Context context;
+    public static Estudiante estudiante = new Estudiante(null,null,null,null);
+    private static Context context;
 
 
     public LoginConsumer(Context context){
         this.context=context;
-
     }
 
     private  boolean checkConectivity(){
@@ -59,7 +62,7 @@ public class LoginConsumer {
 
 
 
-    public void loginRequest(final String email, final String password) {
+    public void loginRequest(final String email, final String password, final Context context) {
 
         if (checkConectivity()) {
 
@@ -77,10 +80,10 @@ public class LoginConsumer {
                                     String usuario = jsonObject.getString("usuario");
                                     estudiante = new Estudiante(nombre, apellido, email, usuario);
                                     utils.showToast("Bienvenido " + nombre,context.getApplicationContext());
-                                   nextStep(true);
+                                   nextStep(true, context);
                                 }
                             } catch (JSONException e) {
-                                nextStep(false);
+                                nextStep(false , context);
                                 utils.showToast("Error de autenticacion",context.getApplicationContext());
                             }
                         }
@@ -88,7 +91,7 @@ public class LoginConsumer {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     utils.showToast("Error en la peticion",context.getApplicationContext());
-                    nextStep(false);
+                    nextStep(false , context);
                 }
             }) {
                 @Override
@@ -103,26 +106,44 @@ public class LoginConsumer {
             requestQueue.add(stringRequest);
         } else {
             utils.showToast("Error de conexión, verifica conexión a internet ",context.getApplicationContext());
-            nextStep(false);
+            nextStep(false , context);
         }
     }
 
-    private void nextStep(boolean success){
+    public static void nextStep(boolean success, Context context){
 
         try {
             if(success){
+                startSession(context.getApplicationContext());
                 Intent intent = new Intent(context, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("nombre",estudiante.getNombre());
+                intent.putExtra("apellido",estudiante.getApellido());
+                intent.putExtra("usuario",estudiante.getUsuario());
+                intent.putExtra("correo",estudiante.getCorreo());
                 context.startActivity(intent);
             }else{
-                Intent intent = new Intent(context, Login.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                context.startActivity(intent);
+                Login.resetLogin();
             }
         } catch (Throwable throwable) {
             throwable.printStackTrace();
             utils.showToast("Error interno",context.getApplicationContext());
         }
     }
+
+    private static void startSession(Context context) {
+        UserSessionDbHelper session = new UserSessionDbHelper(context);
+        SQLiteDatabase db = session.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(UserSessionEntry.USER,estudiante.getUsuario());
+        contentValues.put(UserSessionEntry.NAME,estudiante.getNombre());
+        contentValues.put(UserSessionEntry.LASTNAME,estudiante.getApellido());
+        contentValues.put(UserSessionEntry.EMAIL,estudiante.getCorreo());
+        contentValues.put(UserSessionEntry.ACTIVE,"1");
+
+        db.insert(UserSessionEntry.TABLE_NAME,null,contentValues);
+    }
+
+
 
 }
