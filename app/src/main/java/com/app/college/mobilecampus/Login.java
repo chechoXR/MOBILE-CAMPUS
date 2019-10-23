@@ -67,7 +67,6 @@ public class Login extends AppCompatActivity {
     }
 
     private boolean checkSession(){
-        progressBar.setVisibility(View.VISIBLE);
         UserSessionDbHelper session = new UserSessionDbHelper(this.getApplicationContext());
         SQLiteDatabase db = session.getReadableDatabase();
         //Retorna todos los datos que se encuentran en la base de datos
