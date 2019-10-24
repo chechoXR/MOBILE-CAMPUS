@@ -1,7 +1,5 @@
 package com.app.college.mobilecampus.session;
 
-import com.app.college.mobilecampus.Model.Estudiante;
-
 public class UserSession {
 
    private int id;

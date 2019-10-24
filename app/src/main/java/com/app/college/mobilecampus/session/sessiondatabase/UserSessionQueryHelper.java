@@ -1,7 +1,4 @@
-package com.app.college.mobilecampus.session.database;
-
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
+package com.app.college.mobilecampus.session.sessiondatabase;
 
 public class UserSessionQueryHelper {
 

@@ -4,20 +4,15 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
-import android.util.Log;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
-import com.app.college.mobilecampus.Model.Estudiante;
 import com.app.college.mobilecampus.ServicesConsumer.LoginConsumer;
-import com.app.college.mobilecampus.session.UserSession;
-import com.app.college.mobilecampus.session.database.UserSessionDbHelper;
-import com.app.college.mobilecampus.session.database.UserSessionEntry;
-import com.app.college.mobilecampus.session.database.UserSessionQueryHelper;
-
-import java.util.Arrays;
+import com.app.college.mobilecampus.session.sessiondatabase.UserSessionDbHelper;
+import com.app.college.mobilecampus.session.sessiondatabase.UserSessionEntry;
 
 public class Login extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.app.college.mobilecampus.session.database;
+package com.app.college.mobilecampus.session.sessiondatabase;
 
 import android.provider.BaseColumns;
 
