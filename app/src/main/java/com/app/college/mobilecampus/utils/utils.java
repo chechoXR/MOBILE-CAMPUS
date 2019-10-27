@@ -1,4 +1,4 @@
-package com.app.college.mobilecampus.Utils;
+package com.app.college.mobilecampus.utils;
 
 import android.content.Context;
 import android.graphics.Color;

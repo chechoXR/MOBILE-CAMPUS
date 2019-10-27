@@ -1,4 +1,4 @@
-package com.app.college.mobilecampus.Model;
+package com.app.college.mobilecampus.model;
 
 public class Estudiante {
 
