@@ -25,4 +25,5 @@
     <string name="bienvenido">¡BIENVENIDO!</string>
     <string name="contrasena">Contraseña</string>
     <string name="ingresar">INGRESAR</string>
+    <string name="title_activity_settings">Configuración</string>
 </resources>
