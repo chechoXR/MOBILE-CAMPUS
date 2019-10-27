@@ -15,6 +15,7 @@
     <string name="menu_horario">Consulta tu Horario</string>
     <string name="menu_about">About</string>
     <string name="menu_requisitos">Requisitos de Grado</string>
+    <string name="menu_configuracion">Configuración</string>
 
 
     <string name="menu_todo">ToDo!</string>
@@ -24,4 +25,5 @@
     <string name="bienvenido">¡BIENVENIDO!</string>
     <string name="contrasena">Contraseña</string>
     <string name="ingresar">INGRESAR</string>
+    <string name="title_activity_settings">Configuración</string>
 </resources>
