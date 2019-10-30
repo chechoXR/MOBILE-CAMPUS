@@ -11,52 +11,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-       <ImageView
-        android:id="@+id/imageView_logo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:contentDescription="TODO"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_poli" />
-
-    <TextView
-        android:id="@+id/textView_titulo"
-        android:layout_width="340dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="464dp"
-        android:text="Horario"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:textColor="@color/azul_oscuro"
-        app:layout_constraintBottom_toTopOf="@+id/button_Regresar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/button_Regresar"
-            android:layout_width="wrap_content"
+        <ImageView
+            android:id="@+id/imageView_logo"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="REGRESAR"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_margin="10dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/logo_poli"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_titulo"
+            android:layout_width="340dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="16dp"
+            android:text="Horario"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_logo" />
 
         <CalendarView
-        android:id="@+id/calendarView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button_Regresar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_titulo" />
+            android:id="@+id/calendarView"
+            android:layout_width="366dp"
+            android:layout_height="317dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_titulo" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
