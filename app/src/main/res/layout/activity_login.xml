@@ -16,9 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="30dp"
             android:contentDescription="TODO"
             app:srcCompat="@drawable/logo_poli" />
 
@@ -64,7 +64,10 @@
             android:id="@+id/boton_ingresar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="30dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="80dp"
+            android:layout_marginBottom="30dp"
             android:background="@color/azul_oscuro"
             android:text="@string/ingresar"
             android:textColor="#ffffff"
