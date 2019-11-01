@@ -2,6 +2,7 @@ package com.app.college.mobilecampus;
 
 import android.content.ClipData;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -43,8 +44,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Hipervinculo a Moodle ->", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                //Snackbar.make(view, "Hipervinculo a Moodle ->", Snackbar.LENGTH_LONG)
+                  //      .setAction("Action", null).show();
+                Uri uri = Uri.parse("https://elearn.poligran.edu.co");
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
 
