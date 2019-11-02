@@ -40,23 +40,12 @@ public class LoginConsumer {
         this.context=context;
     }
 
-    private  boolean checkConectivity(){
-        boolean connected = false;
-        ConnectivityManager connectivityManager = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-            connected = true;
-        }
-        else
-            connected = false;
-        return connected;
-    }
 
 
 
     public void loginRequest(final String email, final String password, final Context context) {
 
-        if (checkConectivity()) {
+        if (utils.checkConectivity(context)) {
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_REQUEST,
                     new Response.Listener<String>() {
