@@ -5,6 +5,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.app.college.mobilecampus.ServicesConsumer.LoginConsumer;
+import com.app.college.mobilecampus.session.UserSession;
+import com.app.college.mobilecampus.session.sessiondatabase.UserSessionDbHelper;
+import com.app.college.mobilecampus.session.sessiondatabase.UserSessionEntry;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -73,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-
         return true;
     }
 
@@ -85,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,Settings.class);
                 startActivity(intent);
                 return true;
+            case R.id.action_logout:
+                startActivity(LoginConsumer.finishSession(getApplicationContext()));
         }
         return super.onOptionsItemSelected(item);
     }
