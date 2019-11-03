@@ -6,92 +6,50 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editText_barraBusqueda"
-            android:layout_width="311dp"
-            android:layout_height="51dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Buscar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_titulo" />
-
-        <ImageButton
-            android:id="@+id/imageButton_butonBuscar"
-            android:layout_width="wrap_content"
+        <SearchView
+            android:id="@+id/searchCurso"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:src="@android:drawable/ic_menu_search"
-            app:layout_constraintBottom_toBottomOf="@+id/editText_barraBusqueda"
-            app:layout_constraintStart_toEndOf="@+id/editText_barraBusqueda"
-            app:layout_constraintTop_toTopOf="@+id/editText_barraBusqueda"
-            app:layout_constraintVertical_bias="0.0" />
+            android:layout_margin="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
 
-        <ImageView
-            android:id="@+id/imageView_logo"
-            android:layout_width="392dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:contentDescription="TODO"
-            android:src="@drawable/logo_poli"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:iconifiedByDefault="false"
+            android:queryHint="Buscar" />
 
-        <ScrollView
-            android:id="@+id/scrollView2"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText_barraBusqueda">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView_primerItem"
-                    android:layout_width="337dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="16dp"
-                    android:text="Nombre"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-            </LinearLayout>
-        </ScrollView>
 
         <TextView
-            android:id="@+id/textView_titulo"
-            android:layout_width="395dp"
+            android:id="@+id/nombre_curso"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:text="BIENESTAR UNIVERSITARIO"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView_logo" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:ems="5"
+            android:text=" "
+            android:textColor="#000000" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ListView
+            android:id="@+id/listCurso"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_marginStart="5dp"
+
+            />
+    </LinearLayout>
+
 
 
 </FrameLayout>
