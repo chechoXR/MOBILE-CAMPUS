@@ -32,7 +32,7 @@ import java.util.Map;
 public class LoginConsumer {
 
     private static String LOGIN_REQUEST = "https://campus-movil-255322.appspot.com/login/estudiante";
-    public static Estudiante estudiante = new Estudiante(null,null,null,null, null);
+    public static Estudiante estudiante = new Estudiante(null,null,null,null);
     private static Context context;
 
 
@@ -59,8 +59,7 @@ public class LoginConsumer {
                                     String apellido = jsonObject.getString("apellido");
                                     String email = jsonObject.getString("email");
                                     String usuario = jsonObject.getString("usuario");
-                                    String id = jsonObject.getString("id");
-                                    estudiante = new Estudiante(nombre, apellido, email, usuario, id);
+                                    estudiante = new Estudiante(nombre, apellido, email, usuario);
                                     utils.showToast("Bienvenido " + nombre,context.getApplicationContext());
                                    nextStep(true, context);
                                 }
@@ -103,7 +102,6 @@ public class LoginConsumer {
                 intent.putExtra("apellido",estudiante.getApellido());
                 intent.putExtra("usuario",estudiante.getUsuario());
                 intent.putExtra("correo",estudiante.getCorreo());
-                intent.putExtra("id", estudiante.getId());
                 context.startActivity(intent);
             }else{
                 Login.resetLogin();
@@ -122,7 +120,6 @@ public class LoginConsumer {
         contentValues.put(UserSessionEntry.NAME,estudiante.getNombre());
         contentValues.put(UserSessionEntry.LASTNAME,estudiante.getApellido());
         contentValues.put(UserSessionEntry.EMAIL,estudiante.getCorreo());
-        contentValues.put(UserSessionEntry.ID, estudiante.getId());
         contentValues.put(UserSessionEntry.ACTIVE,"1");
 
         db.insert(UserSessionEntry.TABLE_NAME,null,contentValues);
