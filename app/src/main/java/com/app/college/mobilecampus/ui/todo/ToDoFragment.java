@@ -6,22 +6,14 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.app.college.mobilecampus.MainActivity;
 import com.app.college.mobilecampus.R;
 import com.app.college.mobilecampus.todo.tododatabase.TodoDbHelper;
-import com.app.college.mobilecampus.ui.semilleros.SemillerosViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ToDoFragment extends Fragment {
 
@@ -48,10 +40,15 @@ public class ToDoFragment extends Fragment {
 
         BottomNavigationView nav = root.findViewById(R.id.todo_bottom_nav_bar);
 
-        nav.setOnNavigationItemReselectedListener(listener);
+        nav.setOnNavigationItemSelectedListener(listener);
+        nav.setOnNavigationItemReselectedListener(reListener);
 
+        //Nested fragment selected
         getChildFragmentManager().beginTransaction().replace(R.id.ToDoContainer,new ToDoHomeFragment()).commit();
+
+        //Floating Button constant of movement in Y axis
         fabMove = nav.getItemIconSize()*1.8f;
+        //Floating Button movement
         MainActivity.moveFloatingButton(-fabMove,System.currentTimeMillis());
 
         return root;
@@ -75,15 +72,19 @@ public class ToDoFragment extends Fragment {
 
     }
 
-    private BottomNavigationView.OnNavigationItemReselectedListener listener =
-            new BottomNavigationView.OnNavigationItemReselectedListener() {
+    private BottomNavigationView.OnNavigationItemReselectedListener reListener =
+            new BottomNavigationView.OnNavigationItemReselectedListener(){
                 @Override
                 public void onNavigationItemReselected(@NonNull MenuItem menuItem) {
+                    //No se hace nada al reseleccionar un item de la barra de opciones inferior
+                }
+            };
 
-                    System.out.println("Item " + menuItem.getItemId()+" "+ menuItem.getTitle());
-                    System.out.println("home: " + R.id.todo_Home);
-                    System.out.println("");
-                    System.out.println();
+    private BottomNavigationView.OnNavigationItemSelectedListener listener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
                     Fragment selected = null;
 
                     switch (menuItem.getItemId()) {
@@ -101,7 +102,9 @@ public class ToDoFragment extends Fragment {
 
                     }
                     getChildFragmentManager().beginTransaction().replace(R.id.ToDoContainer,selected).commit();
-            }
+                    return true;
+                }
+
     };
 
 
