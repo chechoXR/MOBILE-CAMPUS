@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     public static FloatingActionButton fab;
+    private static long lastMovementFloatingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        lastMovementFloatingButton=System.currentTimeMillis();
     }
 
     @Override
@@ -123,6 +125,15 @@ public class MainActivity extends AppCompatActivity {
         Navigation.findNavController(view).navigate(R.id.action_home_to_requisitos);
     }
 
+    public static void moveFloatingButton(float Y, long time){
+
+
+        if(time-lastMovementFloatingButton > 1000){
+            fab.setTranslationY(Y);
+
+        lastMovementFloatingButton = System.currentTimeMillis();
+        }
+    }
 
 
 

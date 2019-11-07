@@ -52,7 +52,7 @@ public class ToDoFragment extends Fragment {
 
         getChildFragmentManager().beginTransaction().replace(R.id.ToDoContainer,new ToDoHomeFragment()).commit();
         fabMove = nav.getItemIconSize()*1.8f;
-        MainActivity.fab.setTranslationY(-fabMove);
+        MainActivity.moveFloatingButton(-fabMove,System.currentTimeMillis());
 
         return root;
 
@@ -63,7 +63,7 @@ public class ToDoFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         BottomNavigationView nav = getView().findViewById(R.id.todo_bottom_nav_bar);
-        MainActivity.fab.setTranslationY(0);
+        MainActivity.moveFloatingButton(0,System.currentTimeMillis());
 
     }
 
