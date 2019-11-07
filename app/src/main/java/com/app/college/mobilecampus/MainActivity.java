@@ -92,7 +92,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.action_logout:
-                startActivity(LoginConsumer.finishSession(getApplicationContext()));
+                Intent intent1 = LoginConsumer.finishSession(getApplicationContext());
+                intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent1);
+                finish();
         }
         return super.onOptionsItemSelected(item);
     }
