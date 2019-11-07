@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:descendantFocusability = "blocksDescendants">
+
+    <TableRow>
+        <TextView
+            android:id="@+id/nombre_bienestar"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:textColor="@color/azul_oscuro"
+            android:textStyle="bold"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/modalidad_bienestar"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:textColor="@color/azul_claro"
+            android:textStyle="bold"/>
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/descripcion_bienestar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:autoSizeMaxTextSize="@dimen/activity_horizontal_margin" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/correo_bienestar"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:autoLink="email"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/tipo_bienestar"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/profesor_bienestar"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"/>
+    </TableRow>
+</TableLayout>

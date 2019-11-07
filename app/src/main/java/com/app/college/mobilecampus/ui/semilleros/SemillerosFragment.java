@@ -30,8 +30,6 @@ public class SemillerosFragment extends Fragment {
     private SemillerosViewModel mViewModel;
     private ListView listView;
     private TextView textView;
-
-
     private SemilleroConsumer semilleroConsumer;
 
 

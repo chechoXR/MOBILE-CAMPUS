@@ -125,6 +125,19 @@ public class LoginConsumer {
         db.insert(UserSessionEntry.TABLE_NAME,null,contentValues);
     }
 
+    public static Intent finishSession(Context context) {
+        UserSessionDbHelper session = new UserSessionDbHelper(context);
+        SQLiteDatabase db = session.getWritableDatabase();
+        db.delete(UserSessionEntry.TABLE_NAME,UserSessionEntry.EMAIL +"= '" + estudiante.getCorreo()+"'" ,null);
+        estudiante.setNombre(null);
+        estudiante.setApellido(null);
+        estudiante.setCorreo(null);
+        estudiante.setUsuario(null);
+
+        return new Intent(context,Login.class);
+    }
+
+
 
 
 }

@@ -32,16 +32,20 @@
             android:id="@+id/nav_requisitos"
             android:icon="@drawable/ic_info"
             android:title="@string/menu_requisitos" />
-
     </group>
 
-    <item android:title="Funciones extra!">
+
+    <item
+        android:title="Funciones extra!"
+        android:checkable="true">
         <menu>
             <item
+                android:checkable="true"
                 android:id="@+id/nav_todo"
                 android:icon="@drawable/ic_format_list_numbered"
                 android:title="@string/menu_todo" />
             <item
+                android:checkable="true"
                 android:id="@+id/nav_calcular_nota"
                 android:icon="@drawable/ic_star"
                 android:title="@string/menu_calcular_nota" />
@@ -53,6 +57,7 @@
 
         <menu>
             <item
+                android:checkable="true"
                 android:id="@+id/nav_about"
                 android:icon="@drawable/ic_info"
                 android:title="@string/menu_about" />
@@ -61,5 +66,6 @@
         </menu>
 
     </item>
+
 
 </menu>
