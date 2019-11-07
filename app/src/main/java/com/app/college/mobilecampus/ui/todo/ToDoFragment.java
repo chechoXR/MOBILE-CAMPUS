@@ -3,9 +3,13 @@ package com.app.college.mobilecampus.ui.todo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toolbar;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
@@ -51,8 +55,19 @@ public class ToDoFragment extends Fragment {
         //Floating Button movement
         MainActivity.moveFloatingButton(-fabMove,System.currentTimeMillis());
 
+        View v = inflater.inflate(R.layout.fragment_todo, container, false);
+        setHasOptionsMenu(true);
+
+
         return root;
 
+    }
+
+    //Se añade el boton de agregar a la barra superior
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.todoadd, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
 
