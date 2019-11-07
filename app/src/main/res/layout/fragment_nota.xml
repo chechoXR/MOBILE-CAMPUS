@@ -6,10 +6,14 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="411dp"
+        android:layout_height="650dp"
 
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                app:srcCompat="@drawable/logo_poli" />
+                android:src="@drawable/logo_poli" />
 
             <TextView
                 android:id="@+id/textCalculoNota"
@@ -29,7 +33,6 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:text="Calculo de notas"
-                android:textColor="@color/azul_oscuro"
                 android:textSize="30dp" />
         </LinearLayout>
 
@@ -45,7 +48,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:text="1er corte"/>
+                android:text="1er corte" />
 
             <EditText
                 android:id="@+id/nota1"
@@ -56,7 +59,9 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:queryHint="Ingrese nota"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:ems="2"
+                android:inputType="numberDecimal"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,7 +70,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:text="30 %"/>
+                android:text="30 %" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,7 +85,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:text="2do corte"/>
+                android:text="2do corte" />
 
             <EditText
                 android:id="@+id/nota2"
@@ -91,7 +96,46 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:queryHint="Ingrese nota"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:ems="2"
+                android:inputType="numberDecimal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="30 %" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:text="3er corte" />
+
+            <EditText
+                android:id="@+id/nota3"
+                android:layout_width="121dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:queryHint="Ingrese nota"
+                android:textSize="24sp"
+                android:ems="2"
+                android:inputType="numberDecimal"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -115,55 +159,34 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:text="3er corte"/>
-
-            <EditText
-                android:id="@+id/nota3"
-                android:layout_width="121dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:queryHint="Ingrese nota"
-                android:textSize="24sp" />
+                android:text="Nota minima" />
 
             <TextView
+                android:id="@+id/TextView_notaFinal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:text="30 %"/>
+                android:text="" />
+
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:text="Nota minima"/>
-        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnCalculate"
+                android:id="@+id/Button_calcular"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="60dp"
                 android:text="Calcular" />
 
             <Button
-                android:id="@+id/btnClear"
+                android:id="@+id/Button_clear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="60dp"
