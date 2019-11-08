@@ -1,29 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/NombreMat"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Full_Card"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/azul_oscuro"
-        android:text="Crear DB SQLITE"
-        android:gravity="center"
-        android:layout_weight="1"
-        android:textColor="@color/blanco"
-        android:textSize="30dp" />
-
-    <TextView
-        android:id="@+id/fechaEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="30dp"
-        android:background="@android:color/black"
-        android:textColor="@color/blanco"
-        android:text="15/11/2019"/>
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="8dp"
 
 
-</LinearLayout>
+        >
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gris_fondo"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/Card_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/gris_fondo"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/NombreMat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:width="230dp"
+
+                    android:layout_weight="1"
+                    android:scrollHorizontally="false"
+                    android:gravity="left"
+                    android:text="Crear DB SQLITE"
+                    android:textColor="@color/azul_oscuro"
+                    android:textStyle="bold"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/fechaEnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="15/11/2019"
+                    android:textColor="@color/azul_oscuro"
+                    android:textSize="30dp" />z
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/Card_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gris_fondo"
+                android:orientation="horizontal"
+                android:gravity="right"
+                >
+
+                <ImageButton
+                    android:id="@+id/checkButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="14dp"
+                    android:src="@drawable/ic_check_44"
+                    android:background="@drawable/circle_button_check">
+                </ImageButton>
+
+
+                <ImageButton
+                    android:id="@+id/deleteButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginRight="14dp"
+                    android:src="@drawable/ic_delete_44"
+                    android:background="@drawable/circle_button_check">
+                </ImageButton>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
