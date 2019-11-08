@@ -24,6 +24,7 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="30dp"
                 android:background="@color/azul_claro"
+                android:drawableStart="@android:drawable/ic_menu_today"
                 android:onClick="calendario"
                 android:text="@string/calendario_academico"
                 android:textColor="#ffffff"
@@ -33,17 +34,15 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
-
-
             <Button
                 android:id="@+id/button_consultatodo"
                 android:layout_width="180dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="40dp"
                 android:background="@color/rosado_poli"
+                android:drawableStart="@android:drawable/ic_menu_edit"
                 android:onClick="todo"
                 android:text="@string/to_do"
-                android:drawableStart="@drawable/"
                 android:textColor="#ffffff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -56,6 +55,7 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="40dp"
                 android:background="@color/verde"
+                android:drawableStart="@android:drawable/ic_menu_save"
                 android:onClick="calcularNota"
                 android:text="@string/calcula_nota"
                 android:textColor="#ffffff"
@@ -70,6 +70,7 @@
                 android:layout_height="55dp"
                 android:layout_marginTop="40dp"
                 android:background="@color/amarillo_poli"
+                android:drawableStart="@drawable/ic_date_range"
                 android:onClick="horario"
                 android:text="@string/consulta_tu_horario"
                 android:textColor="#ffffff"
