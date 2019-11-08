@@ -26,4 +26,11 @@
     <string name="contrasena">Contraseña</string>
     <string name="ingresar">INGRESAR</string>
     <string name="title_activity_settings">Configuración</string>
+    <string name="to_do" />
+    <string name="calendario_academico" />
+    <string name="consulta_tu_horario" />
+    <string name="todo" />
+    <string name="calcula_nota" />
+    <string name="log_out" />
+    <string name="requisitos_de_grado" />
 </resources>
