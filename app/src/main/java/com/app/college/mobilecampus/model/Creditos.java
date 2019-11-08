@@ -10,11 +10,11 @@ public class Creditos {
     private int [] academicos;
 
     public Creditos() {
-        compuclub = new int[2];
-        investigacion = new int[2];
-        bienestar = new int[2];
-        emprendimiento = new int[2];
-        academicos = new int[2];
+        compuclub = new int[]{0,0};
+        investigacion = new int[]{0,0};
+        bienestar = new int[]{0,0};
+        emprendimiento = new int[]{0,0};
+        academicos = new int[]{0,0};
     }
 
     public int [] getCompuclub() {
