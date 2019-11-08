@@ -1,25 +1,15 @@
 package com.app.college.mobilecampus;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import com.app.college.mobilecampus.ServicesConsumer.LoginConsumer;
-import com.app.college.mobilecampus.session.UserSession;
-import com.app.college.mobilecampus.session.sessiondatabase.UserSessionDbHelper;
-import com.app.college.mobilecampus.session.sessiondatabase.UserSessionEntry;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -57,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -74,15 +63,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         lastMovementFloatingButton=System.currentTimeMillis();
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-
-
-
         return true;
     }
 
@@ -90,6 +77,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
+            case R.id.action__materia_add:
+                Intent intentTarea = new Intent(MainActivity.this, MateriaAdd.class);
+                startActivity(intentTarea);
+                return true;
+            case R.id.action_tarea_add:
+                Intent intentToDo = new Intent(MainActivity.this, ToDoAdd.class);
+                startActivity(intentToDo);
+                return true;
             case R.id.action_settings:
                 Intent intent = new Intent(MainActivity.this,Settings.class);
                 startActivity(intent);
