@@ -32,6 +32,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+
             <Button
                 android:id="@+id/button_actividadesBienestar"
                 android:layout_width="180dp"
@@ -61,13 +62,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/button_actividadesBienestar" />
 
             <Button
-                android:id="@+id/button_consultaSem"
+                android:id="@+id/button_calcularNota"
                 android:layout_width="180dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="40dp"
-                android:background="@color/azul_claro"
-                android:onClick="semilleros"
-                android:text="Consulta de Semilleros"
+                android:background="@color/verde"
+                android:onClick="calcularNota"
+                android:text="Calcula nota"
                 android:textColor="#ffffff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -79,14 +80,14 @@
                 android:layout_width="180dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="40dp"
-                android:background="@color/azul_claro"
+                android:background="@color/amarillo_poli"
                 android:onClick="horario"
                 android:text="Consulta tu Horario"
                 android:textColor="#ffffff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_consultaSem" />
+                app:layout_constraintTop_toBottomOf="@+id/button_calcularNota" />
 
             <Button
                 android:id="@+id/button_requisitos"
