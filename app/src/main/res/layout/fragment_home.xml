@@ -33,33 +33,21 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 
+
+
             <Button
-                android:id="@+id/button_actividadesBienestar"
+                android:id="@+id/button_consultatodo"
                 android:layout_width="180dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="40dp"
-                android:background="@color/azul_claro"
-                android:onClick="bienestar"
-                android:text="Actividades de Bienestar"
+                android:background="@color/rosado_poli"
+                android:onClick="todo"
+                android:text="To do"
                 android:textColor="#ffffff"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/button_calendarioAcademico" />
-
-            <Button
-                android:id="@+id/button_consultaCreditos"
-                android:layout_width="180dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="40dp"
-                android:background="@color/azul_claro"
-                android:onClick="creditos"
-                android:text="Consulta de Creditos"
-                android:textColor="#ffffff"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_actividadesBienestar" />
 
             <Button
                 android:id="@+id/button_calcularNota"
@@ -73,7 +61,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_consultaCreditos" />
+                app:layout_constraintTop_toBottomOf="@+id/button_consultatodo" />
 
             <Button
                 android:id="@+id/button_consultaHora"
@@ -125,7 +113,7 @@
                 android:contentDescription="TODO"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/button_actividadesBienestar"
+                app:layout_constraintStart_toEndOf="@+id/button_calendarioAcademico"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/logo_poli" />
