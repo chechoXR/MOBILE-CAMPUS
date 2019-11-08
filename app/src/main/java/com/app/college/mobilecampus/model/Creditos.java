@@ -2,48 +2,63 @@ package com.app.college.mobilecampus.model;
 
 public class Creditos {
 
-    //la primera posicion del arreglo son los creditos realizados y la segunda son los creditos requeridos
-    private String [] compuclub;
-    private String [] investigacion;
-    private String [] bienestar;
-    private String [] emprendimiento;
+    //La primera posicion del arreglo son los creditos realizados y la segunda son los creditos requeridos
+    private int [] compuclub;
+    private int [] investigacion;
+    private int [] bienestar;
+    private int [] emprendimiento;
+    private int [] academicos;
 
-    public Creditos(String[] compuclub, String[] investigacion, String[] bienestar, String[] emprendimiento) {
-        this.compuclub = compuclub;
-        this.investigacion = investigacion;
-        this.bienestar = bienestar;
-        this.emprendimiento = emprendimiento;
+    public Creditos() {
+        compuclub = new int[2];
+        investigacion = new int[2];
+        bienestar = new int[2];
+        emprendimiento = new int[2];
+        academicos = new int[2];
     }
 
-    public String [] getCompuclub() {
+    public int [] getCompuclub() {
         return compuclub;
     }
 
-    public String [] getInvestigacion() {
+    public int [] getInvestigacion() {
         return investigacion;
     }
 
-    public String [] getBienestar() {
+    public int [] getBienestar() {
         return bienestar;
     }
 
-    public String [] getEmprendimiento() {
+    public int [] getEmprendimiento() {
         return emprendimiento;
     }
 
-    public void setCompuclub(String[] compuclub) {
-        this.compuclub = compuclub;
+    public void setCompuclub(int obtenido, int cantidad) {
+        compuclub [0] = obtenido;
+        compuclub [1] = cantidad;
     }
 
-    public void setInvestigacion(String[] investigacion) {
-        this.investigacion = investigacion;
+    public void setInvestigacion(int obtenido, int cantidad) {
+        investigacion [0] = obtenido;
+        investigacion [1] = cantidad;
     }
 
-    public void setBienestar(String[] bienestar) {
-        this.bienestar = bienestar;
+    public void setBienestar(int obtenido, int cantidad) {
+        bienestar [0] = obtenido;
+        bienestar [1] = cantidad;
     }
 
-    public void setEmprendimiento(String[] emprendimiento) {
-        this.emprendimiento = emprendimiento;
+    public void setEmprendimiento(int obtenido, int cantidad) {
+        emprendimiento[0] = obtenido;
+        emprendimiento[1] = cantidad;
+    }
+
+    public int[] getAcademicos() {
+        return academicos;
+    }
+
+    public void setAcademicos(int obtenido, int cantidad) {
+        academicos[0] = obtenido;
+        academicos[1] = cantidad;
     }
 }
