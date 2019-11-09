@@ -129,6 +129,6 @@ public class MainActivity extends AppCompatActivity {
     public void calcularNota(View view){
         Navigation.findNavController(view).navigate(R.id.nav_calcular_nota);
     }
-    
+
 
 }

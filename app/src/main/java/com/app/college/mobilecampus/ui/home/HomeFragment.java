@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment {
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        /*
+
         final TextView textView = root.findViewById(R.id.text_home);
         homeViewModel.getText().observe(this, new Observer<String>() {
             @Override
@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
-        */
+
 
 
 

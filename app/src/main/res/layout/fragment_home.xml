@@ -6,105 +6,108 @@
     android:layout_height="match_parent">
 
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-225dp">
+
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
+
+            <TextView
+                android:id="@+id/text_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:text="@string/bienvenido"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="@color/azul_oscuro"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="30dp"
+                tools:layout_editor_absoluteY="141dp" />
 
             <Button
                 android:id="@+id/button_calendarioAcademico"
-                android:layout_width="180dp"
+                android:layout_width="120dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="30dp"
                 android:background="@color/azul_claro"
-                android:text="Calendario academico"
                 android:drawableStart="@android:drawable/ic_menu_today"
                 android:onClick="calendario"
+                android:text="Calendario academico "
                 android:textColor="#ffffff"
+                app:layout_constraintBottom_toTopOf="@+id/button_calcularNota"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.216"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.836" />
 
             <Button
                 android:id="@+id/button_consultatodo"
-                android:layout_width="180dp"
+                android:layout_width="120dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="40dp"
                 android:background="@color/rosado_poli"
-                android:text="To do"
                 android:drawableStart="@android:drawable/ic_menu_edit"
                 android:onClick="todo"
+                android:text="To do"
                 android:textColor="#ffffff"
+                app:layout_constraintBottom_toTopOf="@+id/button_logOut"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_calendarioAcademico" />
+                app:layout_constraintHorizontal_bias="0.388"
+                app:layout_constraintStart_toEndOf="@+id/button_calcularNota"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.844" />
 
             <Button
                 android:id="@+id/button_calcularNota"
-                android:layout_width="180dp"
+                android:layout_width="120dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="40dp"
                 android:background="@color/verde"
-                android:text="Calcula nota"
                 android:drawableStart="@android:drawable/ic_menu_save"
                 android:onClick="calcularNota"
+                android:text="Calcula nota"
                 android:textColor="#ffffff"
+                app:layout_constraintBottom_toTopOf="@+id/button_logOut"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.216"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_consultatodo" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.844" />
 
             <Button
                 android:id="@+id/button_consultaHora"
-                android:layout_width="180dp"
+                android:layout_width="120dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="40dp"
                 android:background="@color/amarillo_poli"
-                android:text="Consulta tu horario"
                 android:drawableStart="@drawable/ic_date_range"
                 android:onClick="horario"
+                android:text="Consulta tu horario"
                 android:textColor="#ffffff"
+                app:layout_constraintBottom_toTopOf="@+id/button_consultatodo"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_calcularNota" />
-
-            <Button
-                android:id="@+id/button_requisitos"
-                android:layout_width="180dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="40dp"
-                android:background="@color/azul_claro"
-                android:onClick="requisitos"
-                android:text="Requisitos de grado"
-                android:textColor="#ffffff"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_consultaHora" />
+                app:layout_constraintHorizontal_bias="0.388"
+                app:layout_constraintStart_toEndOf="@+id/button_calendarioAcademico"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.836" />
 
             <Button
                 android:id="@+id/button_logOut"
-                android:layout_width="180dp"
+                android:layout_width="120dp"
                 android:layout_height="55dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="257dp"
                 android:background="@color/azul_claro"
                 android:text="Log out"
                 android:textColor="#ffffff"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button_requisitos" />
+                app:layout_constraintTop_toTopOf="@+id/imageView"
+                app:layout_constraintVertical_bias="0.757" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -120,7 +123,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/logo_poli" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+
 
     <FrameLayout
         android:id="@+id/fragment_container"
