@@ -122,8 +122,13 @@ public class MainActivity extends AppCompatActivity {
         Navigation.findNavController(view).navigate(R.id.action_home_to_requisitos);
     }
 
+    public void todo(View view){
+        Navigation.findNavController(view).navigate(R.id.nav_todo);
+    }
 
-
-
+    public void calcularNota(View view){
+        Navigation.findNavController(view).navigate(R.id.nav_calcular_nota);
+    }
+    
 
 }
