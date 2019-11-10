@@ -51,6 +51,7 @@ public class SemillerosFragment extends Fragment {
         mViewModel = ViewModelProviders.of(this).get(SemillerosViewModel.class);
     }
 
+
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         listView  = (ListView) view.findViewById(R.id.listSemillero);
@@ -63,11 +64,10 @@ public class SemillerosFragment extends Fragment {
 
                 SemilleroListVIew semilleroListVIew = new SemilleroListVIew(getActivity(),SemilleroConsumer.semilleros);
                 listView.setAdapter(semilleroListVIew);
-
                 utils.showToast(SemilleroConsumer.semilleros.size()+"",getContext());
 
             }
-        }, 3000);
+        }, 2000);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
