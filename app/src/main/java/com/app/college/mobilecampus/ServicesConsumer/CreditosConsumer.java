@@ -19,23 +19,23 @@ import org.json.JSONObject;
 public class CreditosConsumer {
 
     private final static String CREDITOS_REQUEST = "https://campus-movil-255322.appspot.com/CreditosEstudiante/verCreditosPorEstudiante?id=";
-    public Creditos creditos = new Creditos();
+    public Creditos creditos;
     private Context context;
 
     public CreditosConsumer (Context context){
         this.context=context;
+        creditos = new Creditos();
     }
 
     public void loadCreditos (){
         if (utils.checkConectivity(context)){
-            String URL = CREDITOS_REQUEST + LoginConsumer.estudiante.getId();
-            StringRequest stringRequest;
-            stringRequest = new StringRequest(Request.Method.GET, URL, (new Response.Listener<String>() {
+            String URL = CREDITOS_REQUEST + 1610011255;//LoginConsumer.estudiante.getId();
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, (new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     try {
                         JSONArray jsonArray = new JSONArray(response);
-                        JSONObject jsonObject = null;
+                        JSONObject jsonObject;
                         for (int i = 0; i < jsonArray.length(); i++) {
                             jsonObject = jsonArray.getJSONObject(i);
                             if (jsonObject.getString("nombre").equals("Informática")){

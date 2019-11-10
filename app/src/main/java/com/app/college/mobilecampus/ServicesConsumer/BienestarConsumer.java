@@ -32,13 +32,12 @@ public class BienestarConsumer {
         bienestar = new ArrayList<>();
 
         if(utils.checkConectivity(context)){
-
             StringRequest stringRequest = new StringRequest(Request.Method.GET, BIENESTAR_REQUEST, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     try {
                         JSONArray jsonArray = new JSONArray(response);
-                        JSONObject jsonObject = null;
+                        JSONObject jsonObject;
                         for(int i=0; i < jsonArray.length(); i++){
                             jsonObject = jsonArray.getJSONObject(i);
                             bienestar.add(new Bienestar(jsonObject.getString("nombre"),jsonObject.getString("modalidad"),jsonObject.getString("descripcion"),
