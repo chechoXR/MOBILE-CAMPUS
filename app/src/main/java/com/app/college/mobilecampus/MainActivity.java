@@ -137,7 +137,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void todo(View view){
-        Navigation.findNavController(view).navigate(R.id.nav_todo);
+        Navigation.findNavController(view).navigate(R.id.action_home_to_ToDo);
+    }
+
+    public void calcularNota (View view){
+        Navigation.findNavController(view).navigate(R.id.action_home_to_calcular_nota);
     }
 
     public static void moveFloatingButton(float Y, long time) {
@@ -156,9 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
     
     
-        public void calcularNota (View view){
-            Navigation.findNavController(view).navigate(R.id.nav_calcular_nota);
-        }
+
 
 
     }
