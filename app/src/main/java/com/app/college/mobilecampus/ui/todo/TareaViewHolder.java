@@ -23,16 +23,36 @@ public class TareaViewHolder extends RecyclerView.ViewHolder {
         this.nombre = (TextView) itemView.findViewById(R.id.NombreMat);
         this.fecha = (TextView) itemView.findViewById(R.id.fechaEnd);
         textCardView = (CardView) view.findViewById(R.id.Full_Card);
-        implementSwipeDismiss();
+        //implementSwipeDismiss();
     }
 
     private void implementSwipeDismiss() {
         SwipeDismissBehavior swipeDismissBehavior = new SwipeDismissBehavior();
         swipeDismissBehavior.setSwipeDirection(SwipeDismissBehavior.SWIPE_DIRECTION_START_TO_END);//Swipe direction i.e any direction, here you can put any direction LEFT or RIGHT
 
+
+        swipeDismissBehavior.setListener(new SwipeDismissBehavior.OnDismissListener() {
+            @Override
+            public void onDismiss(View view) {
+                System.out.println("Dismised!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!S");
+                System.out.println("Dismised!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!S");
+                System.out.println("Dismised!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!S");
+                System.out.println("Dismised!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!S");
+
+
+
+            }
+
+            @Override
+            public void onDragStateChanged(int i) {
+
+            }
+        });
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) textCardView.getLayoutParams();
 
         layoutParams.setBehavior(swipeDismissBehavior);//set swipe behaviour to Coordinator layout
+
+
         
     }
 }
