@@ -20,8 +20,7 @@ public class CreditosFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        creditosViewModel =
-                ViewModelProviders.of(this).get(CreditosViewModel.class);
+        creditosViewModel = ViewModelProviders.of(this).get(CreditosViewModel.class);
         View root = inflater.inflate(R.layout.fragment_creditos, container, false);
 
         return root;
