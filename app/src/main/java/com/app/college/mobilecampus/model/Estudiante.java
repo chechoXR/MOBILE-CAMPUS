@@ -1,5 +1,7 @@
 package com.app.college.mobilecampus.model;
 
+import androidx.annotation.NonNull;
+
 public class Estudiante {
 
     private String nombre,apellido,correo,usuario;
@@ -42,4 +44,6 @@ public class Estudiante {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
+
+
 }
