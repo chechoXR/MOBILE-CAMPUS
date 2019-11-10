@@ -21,6 +21,9 @@ public class Tarea {
         this.id_materia = id_materia;
         this.completada = completada;
     }
+    public Tarea(){
+
+    }
 
     public int getId() {
         return id;
