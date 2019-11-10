@@ -42,7 +42,6 @@ public class NotaFragment extends Fragment {
                 notaFinal.setText(calcular());
             }
         });
-
         botonClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

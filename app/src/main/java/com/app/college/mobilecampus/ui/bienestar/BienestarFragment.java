@@ -29,10 +29,8 @@ public class BienestarFragment extends Fragment {
     private TextView textView;
     private BienestarConsumer bienestarConsumer;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        bienestarViewModel =
-                ViewModelProviders.of(this).get(BienestarViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        bienestarViewModel = ViewModelProviders.of(this).get(BienestarViewModel.class);
         View root = inflater.inflate(R.layout.fragment_bienestar, container, false);
         return root;
     }
