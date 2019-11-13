@@ -5,4 +5,8 @@
     android:id="@+id/todo_materias"
     android:background="@color/azul_oscuro">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Recycler_Materia_View"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </RelativeLayout>

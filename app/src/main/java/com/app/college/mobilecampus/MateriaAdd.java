@@ -15,6 +15,7 @@ import com.app.college.mobilecampus.utils.utils;
 
 public class MateriaAdd extends AppCompatActivity {
     public EditText materia;
+    public EditText correo_profesor;
     public Button añadir;
 
     @Override
@@ -22,6 +23,7 @@ public class MateriaAdd extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materia_add);
         materia=findViewById(R.id.nombreMateria);
+        correo_profesor=findViewById(R.id.correo_profesor);
         añadir=findViewById(R.id.añadir_materia);
         añadir.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,7 +36,7 @@ public class MateriaAdd extends AppCompatActivity {
         TodoDbHelper todoDbHelper = new TodoDbHelper(this);
         SQLiteDatabase db = todoDbHelper.getWritableDatabase();
         todoUtilSQL todoutilSQL = new todoUtilSQL(db);
-        todoutilSQL.insertMateria(materia.getText().toString());
+        todoutilSQL.insertMateria(materia.getText().toString(),correo_profesor.getText().toString());
         utils.showToast("MATERIA AGREGADA",this);
         Intent intent = new Intent(this, ToDoAdd.class);
         startActivity(intent);
