@@ -1,14 +1,17 @@
 package com.app.college.mobilecampus.model;
 
+import androidx.annotation.NonNull;
+
 public class Estudiante {
 
-    private String nombre,apellido,correo,usuario;
+    private String nombre,apellido,correo,usuario,id;
 
-    public Estudiante(String nombre, String apellido, String correo, String usuario) {
+    public Estudiante(String nombre, String apellido, String correo, String usuario, String id) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.usuario = usuario;
+        this.id = id; //Codigo Estudiante
     }
 
     public String getNombre() {
@@ -42,4 +45,10 @@ public class Estudiante {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
+
+
+    public String getId() { return id; }
+
+    public void setId(String id) { this.id = id; }
+
 }
