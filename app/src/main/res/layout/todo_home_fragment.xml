@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Spinner
-        android:id="@+id/SortBy"
+        android:id="@+id/SortByHome"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:entries="@array/SortByList"
