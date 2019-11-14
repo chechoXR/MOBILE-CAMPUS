@@ -46,7 +46,6 @@ public class BienestarFragment extends Fragment {
             public void run() {
                 BienestarListView bienestarListView = new BienestarListView(getActivity(),BienestarConsumer.bienestar);
                 listView.setAdapter(bienestarListView);
-
             }
         }, 3000);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

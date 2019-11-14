@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class BienestarConsumer {
 
     private static String BIENESTAR_REQUEST = "https://campus-movil-255322.appspot.com/bienestar/verCursos";
-    public static ArrayList<Bienestar> bienestar = null;
+    public static ArrayList<Bienestar> bienestar;
     private Context context;
 
     public BienestarConsumer(Context context){
@@ -30,7 +30,6 @@ public class BienestarConsumer {
 
     public void loadCursos(){
         bienestar = new ArrayList<>();
-
         if(utils.checkConectivity(context)){
             StringRequest stringRequest = new StringRequest(Request.Method.GET, BIENESTAR_REQUEST, new Response.Listener<String>() {
                 @Override
@@ -54,6 +53,7 @@ public class BienestarConsumer {
 
                 }
             });
+            System.out.print(bienestar.toString());
             RequestQueue requestQueue = Volley.newRequestQueue(context);
             requestQueue.add(stringRequest);
         }else{
