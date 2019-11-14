@@ -19,6 +19,7 @@ import com.android.volley.toolbox.Volley;
 import com.app.college.mobilecampus.MainActivity;
 import com.app.college.mobilecampus.Login;
 import com.app.college.mobilecampus.model.Estudiante;
+import com.app.college.mobilecampus.session.UserSession;
 import com.app.college.mobilecampus.utils.utils;
 import com.app.college.mobilecampus.session.sessiondatabase.UserSessionDbHelper;
 import com.app.college.mobilecampus.session.sessiondatabase.UserSessionEntry;
@@ -44,11 +45,8 @@ public class LoginConsumer {
 
 
     public void loginRequest(final String email, final String password, final Context context) {
-
         if (utils.checkConectivity(context)) {
-
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_REQUEST,
-                    new Response.Listener<String>() {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_REQUEST, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
@@ -103,7 +101,7 @@ public class LoginConsumer {
                 intent.putExtra("apellido",estudiante.getApellido());
                 intent.putExtra("usuario",estudiante.getUsuario());
                 intent.putExtra("correo",estudiante.getCorreo());
-                intent.putExtra("id", estudiante.getId());
+
                 context.startActivity(intent);
             }else{
                 Login.resetLogin();
@@ -122,7 +120,7 @@ public class LoginConsumer {
         contentValues.put(UserSessionEntry.NAME,estudiante.getNombre());
         contentValues.put(UserSessionEntry.LASTNAME,estudiante.getApellido());
         contentValues.put(UserSessionEntry.EMAIL,estudiante.getCorreo());
-        contentValues.put(UserSessionEntry.ID, estudiante.getId());
+
         contentValues.put(UserSessionEntry.ACTIVE,"1");
 
         db.insert(UserSessionEntry.TABLE_NAME,null,contentValues);
