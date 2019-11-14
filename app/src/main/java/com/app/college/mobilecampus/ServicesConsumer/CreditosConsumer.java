@@ -1,6 +1,8 @@
 package com.app.college.mobilecampus.ServicesConsumer;
 
 import android.content.Context;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -10,6 +12,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.app.college.mobilecampus.model.Creditos;
 import com.app.college.mobilecampus.model.Estudiante;
+import com.app.college.mobilecampus.session.UserSession;
 import com.app.college.mobilecampus.session.sessiondatabase.UserSessionEntry;
 import com.app.college.mobilecampus.utils.utils;
 import org.json.JSONArray;
@@ -27,8 +30,9 @@ public class CreditosConsumer {
     }
 
     public void loadCreditos (){
+        Toast.makeText(context, "Codigo = "+ LoginConsumer.estudiante.getCodigo(), Toast.LENGTH_SHORT).show();
         if (utils.checkConectivity(context)){
-            String URL = CREDITOS_REQUEST + LoginConsumer.estudiante.getId();
+            String URL = CREDITOS_REQUEST + LoginConsumer.estudiante.getCodigo();
             StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, (new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
