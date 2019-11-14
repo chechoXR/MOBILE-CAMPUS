@@ -61,7 +61,18 @@
         app:layout_constraintTop_toBottomOf="@+id/text" />
 
     <TextView
-        android:id="@+id/text1"
+        android:id="@+id/textCreditosAcademicos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/progresoAcademicos"
+        app:layout_constraintStart_toStartOf="@+id/progresoAcademicos"
+        app:layout_constraintTop_toTopOf="@+id/progresoAcademicos" />
+
+    <TextView
+        android:id="@+id/textEmprendimiento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -85,7 +96,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text1" />
+        app:layout_constraintTop_toBottomOf="@+id/textEmprendimiento" />
+
+    <TextView
+        android:id="@+id/textCreditosEmprendimiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="1 de 3"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/progresoEmprendimiento"
+        app:layout_constraintStart_toStartOf="@+id/progresoEmprendimiento"
+        app:layout_constraintTop_toTopOf="@+id/progresoEmprendimiento" />
 
     <TextView
         android:id="@+id/textInformatica"
@@ -116,6 +140,19 @@
 
 
     <TextView
+        android:id="@+id/textCreditosInformatica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="2 de 3"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/progresoInformatica"
+        app:layout_constraintStart_toStartOf="@+id/progresoInformatica"
+        app:layout_constraintTop_toTopOf="@+id/progresoInformatica" />
+
+    <TextView
         android:id="@+id/CreditosInvestigación"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -128,15 +165,16 @@
         app:layout_constraintTop_toBottomOf="@+id/progresoInformatica" />
 
     <TextView
-        android:id="@+id/textB"
+        android:id="@+id/textI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Créditos Bienestar"
+        android:text="Créditos Investigación"
         android:textColor="@color/azul_oscuro"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progresoInvestigacion" />
+        app:layout_constraintTop_toBottomOf="@+id/progresoInformatica" />
 
     <ProgressBar
         android:id="@+id/progresoInvestigacion"
@@ -153,6 +191,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CreditosInvestigación" />
 
+    <TextView
+        android:id="@+id/textCreditosInvestigacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="3 de 3"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/progresoInvestigacion"
+        app:layout_constraintStart_toStartOf="@+id/progresoInvestigacion"
+        app:layout_constraintTop_toTopOf="@+id/progresoInvestigacion" />
+
+    <TextView
+        android:id="@+id/textB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Créditos Bienestar"
+        android:textColor="@color/azul_oscuro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progresoInvestigacion" />
+
     <ProgressBar
         android:id="@+id/progresoBienestar"
         style="@android:style/Widget.ProgressBar.Horizontal"
@@ -166,68 +228,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textB" />
-
-    <TextView
-        android:id="@+id/textI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Créditos Investigación"
-        android:textColor="@color/azul_oscuro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progresoInformatica" />
-
-    <TextView
-        android:id="@+id/textCreditosAcademicos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/progresoAcademicos"
-        app:layout_constraintStart_toStartOf="@+id/progresoAcademicos"
-        app:layout_constraintTop_toTopOf="@+id/progresoAcademicos" />
-
-    <TextView
-        android:id="@+id/textCreditosEmprendimiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="1 de 3"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/progresoEmprendimiento"
-        app:layout_constraintStart_toStartOf="@+id/progresoEmprendimiento"
-        app:layout_constraintTop_toTopOf="@+id/progresoEmprendimiento" />
-
-    <TextView
-        android:id="@+id/textCreditosInformatica"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="2 de 3"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/progresoInformatica"
-        app:layout_constraintStart_toStartOf="@+id/progresoInformatica"
-        app:layout_constraintTop_toTopOf="@+id/progresoInformatica" />
-
-    <TextView
-        android:id="@+id/textCreditosInvestigacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="3 de 3"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/progresoInvestigacion"
-        app:layout_constraintStart_toStartOf="@+id/progresoInvestigacion"
-        app:layout_constraintTop_toTopOf="@+id/progresoInvestigacion" />
 
     <TextView
         android:id="@+id/textCreditosBienestar"

@@ -44,11 +44,8 @@ public class LoginConsumer {
 
 
     public void loginRequest(final String email, final String password, final Context context) {
-
         if (utils.checkConectivity(context)) {
-
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_REQUEST,
-                    new Response.Listener<String>() {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_REQUEST, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {

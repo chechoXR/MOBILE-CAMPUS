@@ -18,19 +18,17 @@ public class Creditos {
     }
 
     public int [] getCompuclub() {
-        return compuclub;
+        return this.compuclub;
     }
-
     public int [] getInvestigacion() {
-        return investigacion;
+        return this.investigacion;
     }
-
     public int [] getBienestar() {
-        return bienestar;
+        return this.bienestar;
     }
-
-    public int [] getEmprendimiento() {
-        return emprendimiento;
+    public int [] getEmprendimiento() {return this.emprendimiento;}
+    public int [] getAcademicos() {
+        return academicos;
     }
 
     public void setCompuclub(int obtenido, int cantidad) {
@@ -51,10 +49,6 @@ public class Creditos {
     public void setEmprendimiento(int obtenido, int cantidad) {
         emprendimiento[0] = obtenido;
         emprendimiento[1] = cantidad;
-    }
-
-    public int[] getAcademicos() {
-        return academicos;
     }
 
     public void setAcademicos(int obtenido, int cantidad) {
