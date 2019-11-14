@@ -4,14 +4,14 @@ import androidx.annotation.NonNull;
 
 public class Estudiante {
 
-    private String nombre,apellido,correo,usuario,id;
+    private String nombre,apellido,correo,usuario,codigo;
 
-    public Estudiante(String nombre, String apellido, String correo, String usuario, String id) {
+    public Estudiante(String nombre, String apellido, String correo, String usuario, String codigo) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
         this.usuario = usuario;
-        this.id = id; //Codigo Estudiante
+        this.codigo = codigo;
     }
 
     public String getNombre() {
@@ -47,8 +47,8 @@ public class Estudiante {
     }
 
 
-    public String getId() { return id; }
+    public String getCodigo() { return codigo; }
 
-    public void setId(String id) { this.id = id; }
+    public void setCodigo(String id) { this.codigo = codigo; }
 
 }

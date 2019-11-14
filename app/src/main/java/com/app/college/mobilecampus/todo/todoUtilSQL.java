@@ -15,9 +15,10 @@ public class todoUtilSQL {
         this.todoDB = todoDB;
     }
 
-    public void insertMateria(String nombre) {
+    public void insertMateria(String nombre,String correo_profesor) {
         ContentValues values = new ContentValues();
         values.put(TodoMateriaEntry.MATERIA, nombre);
+        values.put(TodoMateriaEntry.CORREO_PROFESOR,correo_profesor);
         todoDB.insert(TodoMateriaEntry.TABLE_NAME, null, values);
     }
 
