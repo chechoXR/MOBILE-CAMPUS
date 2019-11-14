@@ -45,7 +45,7 @@ public class CreditosConsumer {
                             jsonObject = jsonObjectCredito.getJSONObject("credito");
                             if (jsonObject.getString("nombre").equals("Informática")){
                                 creditos.setCompuclub(jsonObjectCredito.getInt("creditos_obtenidos"),jsonObject.getInt("cantidad"));
-                            } else if (jsonObject.getString("nombre").equals("Investigacion")){
+                            } else if (jsonObject.getString("nombre").equals("Investigación")){
                                 creditos.setInvestigacion(jsonObjectCredito.getInt("creditos_obtenidos"),jsonObject.getInt("cantidad"));
                             } else if (jsonObject.getString("nombre").equals("Bienestar")){
                                 creditos.setBienestar(jsonObjectCredito.getInt("creditos_obtenidos"),jsonObject.getInt("cantidad"));

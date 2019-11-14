@@ -70,7 +70,7 @@ public class CreditosFragment extends Fragment {
                 progresoBienestar.setMax(CreditosConsumer.creditos.getBienestar()[1]);
                 progresoBienestar.setProgress(CreditosConsumer.creditos.getBienestar()[0]);
             }
-        }, 3000);
+        }, 2000);
 
         return root;
     }
