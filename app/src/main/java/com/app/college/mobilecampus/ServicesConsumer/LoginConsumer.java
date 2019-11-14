@@ -100,7 +100,7 @@ public class LoginConsumer {
                 intent.putExtra("apellido",estudiante.getApellido());
                 intent.putExtra("usuario",estudiante.getUsuario());
                 intent.putExtra("correo",estudiante.getCorreo());
-                intent.putExtra("id", estudiante.getId());
+
                 context.startActivity(intent);
             }else{
                 Login.resetLogin();
@@ -119,7 +119,7 @@ public class LoginConsumer {
         contentValues.put(UserSessionEntry.NAME,estudiante.getNombre());
         contentValues.put(UserSessionEntry.LASTNAME,estudiante.getApellido());
         contentValues.put(UserSessionEntry.EMAIL,estudiante.getCorreo());
-        contentValues.put(UserSessionEntry.ID, estudiante.getId());
+
         contentValues.put(UserSessionEntry.ACTIVE,"1");
 
         db.insert(UserSessionEntry.TABLE_NAME,null,contentValues);
