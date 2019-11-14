@@ -8,22 +8,22 @@ import com.app.college.mobilecampus.todo.tododatabase.TodoTareaEntry;
 
 
 public class todoUtilSQL {
-    SQLiteDatabase todoDB;
+
+    private SQLiteDatabase todoDB;
 
     public todoUtilSQL(SQLiteDatabase todoDB) {
         this.todoDB = todoDB;
     }
 
-    public void insertMateria(int id, String nombre) {
+    public void insertMateria(String nombre,String correo_profesor) {
         ContentValues values = new ContentValues();
-        values.put(TodoMateriaEntry.ID, id);
         values.put(TodoMateriaEntry.MATERIA, nombre);
+        values.put(TodoMateriaEntry.CORREO_PROFESOR,correo_profesor);
         todoDB.insert(TodoMateriaEntry.TABLE_NAME, null, values);
     }
 
-    public void insertTarea(int id, String nombre, String descripcion, String fecha_inicio, String fecha_fin, double calificacion, int id_materia, int completada) {
+    public void insertTarea(String nombre, String descripcion, String fecha_inicio, String fecha_fin, double calificacion, int id_materia, int completada) {
         ContentValues values = new ContentValues();
-        values.put(TodoTareaEntry.ID, id);
         values.put(TodoTareaEntry.NAME, nombre);
         values.put(TodoTareaEntry.DESCRIPTION, descripcion);
         values.put(TodoTareaEntry.INIT_DATE, fecha_inicio);
@@ -40,5 +40,9 @@ public class todoUtilSQL {
 
     public Cursor getAllTarea() {
         return todoDB.query(TodoTareaEntry.TABLE_NAME, null, null, null, null, null, null, null);
+    }
+    public Cursor getIdMateria(){
+        String[] columns = {TodoMateriaEntry.ID};
+        return todoDB.query(TodoMateriaEntry.TABLE_NAME, columns, TodoMateriaEntry.MATERIA, null, null, null, null, null);
     }
 }

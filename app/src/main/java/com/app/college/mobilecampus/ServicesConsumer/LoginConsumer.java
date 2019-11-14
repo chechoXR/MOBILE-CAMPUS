@@ -32,7 +32,7 @@ import java.util.Map;
 public class LoginConsumer {
 
     private static String LOGIN_REQUEST = "https://campus-movil-255322.appspot.com/login/estudiante";
-    public static Estudiante estudiante = new Estudiante(null,null,null,null);
+    public static Estudiante estudiante = new Estudiante(null,null,null,null, null);
     private static Context context;
 
 
@@ -44,11 +44,8 @@ public class LoginConsumer {
 
 
     public void loginRequest(final String email, final String password, final Context context) {
-
         if (utils.checkConectivity(context)) {
-
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_REQUEST,
-                    new Response.Listener<String>() {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_REQUEST, new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
                             try {
@@ -59,9 +56,10 @@ public class LoginConsumer {
                                     String apellido = jsonObject.getString("apellido");
                                     String email = jsonObject.getString("email");
                                     String usuario = jsonObject.getString("usuario");
-                                    estudiante = new Estudiante(nombre, apellido, email, usuario);
+                                    String id = jsonObject.getString("id");
+                                    estudiante = new Estudiante(nombre, apellido, email, usuario, id);
                                     utils.showToast("Bienvenido " + nombre,context.getApplicationContext());
-                                   nextStep(true, context);
+                                    nextStep(true, context);
                                 }
                             } catch (JSONException e) {
                                 nextStep(false , context);
@@ -102,6 +100,7 @@ public class LoginConsumer {
                 intent.putExtra("apellido",estudiante.getApellido());
                 intent.putExtra("usuario",estudiante.getUsuario());
                 intent.putExtra("correo",estudiante.getCorreo());
+                intent.putExtra("id", estudiante.getId());
                 context.startActivity(intent);
             }else{
                 Login.resetLogin();
@@ -120,6 +119,7 @@ public class LoginConsumer {
         contentValues.put(UserSessionEntry.NAME,estudiante.getNombre());
         contentValues.put(UserSessionEntry.LASTNAME,estudiante.getApellido());
         contentValues.put(UserSessionEntry.EMAIL,estudiante.getCorreo());
+        contentValues.put(UserSessionEntry.ID, estudiante.getId());
         contentValues.put(UserSessionEntry.ACTIVE,"1");
 
         db.insert(UserSessionEntry.TABLE_NAME,null,contentValues);
@@ -129,6 +129,11 @@ public class LoginConsumer {
         UserSessionDbHelper session = new UserSessionDbHelper(context);
         SQLiteDatabase db = session.getWritableDatabase();
         db.delete(UserSessionEntry.TABLE_NAME,UserSessionEntry.EMAIL +"= '" + estudiante.getCorreo()+"'" ,null);
+        estudiante.setNombre(null);
+        estudiante.setApellido(null);
+        estudiante.setCorreo(null);
+        estudiante.setUsuario(null);
+
         return new Intent(context,Login.class);
     }
 

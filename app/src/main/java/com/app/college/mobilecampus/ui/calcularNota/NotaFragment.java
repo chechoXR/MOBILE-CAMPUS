@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import com.app.college.mobilecampus.R;
+import com.app.college.mobilecampus.utils.utils;
 
 
 public class NotaFragment extends Fragment {
@@ -41,7 +42,6 @@ public class NotaFragment extends Fragment {
                 notaFinal.setText(calcular());
             }
         });
-
         botonClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +56,7 @@ public class NotaFragment extends Fragment {
 
     private String calcular(){
         if(primerCorte.getText().toString().equals("") || segundoCorte.getText().toString().equals("")){
-            Toast.makeText(this.getContext(), "Datos insuficientes", Toast.LENGTH_LONG).show();
+            utils.showToast("Datos insuficientes",this.getContext());
             return"";
         }
         double nota1, nota2, nota3;
@@ -72,7 +72,7 @@ public class NotaFragment extends Fragment {
                 return String.format("%.2f", new Double((nota1 * 0.3) + (nota2 * 0.3) + (nota3 * 0.4)));
             }
         }catch (NumberFormatException e){
-            Toast.makeText(this.getContext(), "Datos no validos", Toast.LENGTH_LONG).show();
+            utils.showToast("Datos no validos",this.getContext());
             return "";
         }
     }

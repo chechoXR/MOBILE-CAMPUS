@@ -1,5 +1,7 @@
 package com.app.college.mobilecampus.todo;
 
+import androidx.annotation.NonNull;
+
 public class Tarea {
 
     private int id;
@@ -20,6 +22,9 @@ public class Tarea {
         this.calificacion = calificacion;
         this.id_materia = id_materia;
         this.completada = completada;
+    }
+    public Tarea(){
+
     }
 
     public int getId() {
@@ -84,5 +89,11 @@ public class Tarea {
 
     public void setCompletada(int completada) {
         this.completada = completada;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "ID: "+ id + "   |   " + "Nombre: " + nombre;
     }
 }

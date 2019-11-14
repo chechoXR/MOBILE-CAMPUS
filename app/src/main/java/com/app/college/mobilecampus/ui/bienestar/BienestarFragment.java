@@ -29,10 +29,8 @@ public class BienestarFragment extends Fragment {
     private TextView textView;
     private BienestarConsumer bienestarConsumer;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        bienestarViewModel =
-                ViewModelProviders.of(this).get(BienestarViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        bienestarViewModel = ViewModelProviders.of(this).get(BienestarViewModel.class);
         View root = inflater.inflate(R.layout.fragment_bienestar, container, false);
         return root;
     }
@@ -48,7 +46,6 @@ public class BienestarFragment extends Fragment {
             public void run() {
                 BienestarListView bienestarListView = new BienestarListView(getActivity(),BienestarConsumer.bienestar);
                 listView.setAdapter(bienestarListView);
-
             }
         }, 3000);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

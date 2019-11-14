@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/ToDoHome"
+        android:icon="@drawable/ic_check"
+        android:title="To Do"
+        ></item>
+
+    <item
+        android:id="@+id/ToDoTareasMateria"
+        android:icon="@drawable/ic_equalizer"
+        android:title="Tareas por materia"
+        ></item>
+
+    <item
+        android:id="@+id/ToDoMateria"
+        android:icon="@drawable/ic_date_range"
+        android:title="Materias"
+        ></item>
+
+
+</menu>

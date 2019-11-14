@@ -1,25 +1,15 @@
 package com.app.college.mobilecampus;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
 import com.app.college.mobilecampus.ServicesConsumer.LoginConsumer;
-import com.app.college.mobilecampus.session.UserSession;
-import com.app.college.mobilecampus.session.sessiondatabase.UserSessionDbHelper;
-import com.app.college.mobilecampus.session.sessiondatabase.UserSessionEntry;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -33,7 +23,8 @@ import android.view.Menu;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-
+    public static FloatingActionButton fab;
+    private static long lastMovementFloatingButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        lastMovementFloatingButton=System.currentTimeMillis();
+
     }
 
     @Override
@@ -84,12 +77,23 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         switch (item.getItemId()) {
+            case R.id.action__materia_add:
+                Intent intentTarea = new Intent(MainActivity.this, MateriaAdd.class);
+                startActivity(intentTarea);
+                return true;
+            case R.id.action_tarea_add:
+                Intent intentToDo = new Intent(MainActivity.this, ToDoAdd.class);
+                startActivity(intentToDo);
+                return true;
             case R.id.action_settings:
                 Intent intent = new Intent(MainActivity.this,Settings.class);
                 startActivity(intent);
                 return true;
             case R.id.action_logout:
-                startActivity(LoginConsumer.finishSession(getApplicationContext()));
+                Intent intent1 = LoginConsumer.finishSession(getApplicationContext());
+                intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent1);
+                finish();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -132,6 +136,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void todo(View view){
+        Navigation.findNavController(view).navigate(R.id.nav_todo);
+    }
+
+    public static void moveFloatingButton(float Y, long time) {
 
 
-}
+        if (time - lastMovementFloatingButton > 1000) {
+            fab.setTranslationY(Y);
+
+            lastMovementFloatingButton = System.currentTimeMillis();
+        }
+
+    }
+
+    
+
+
+    
+    
+        public void calcularNota (View view){
+            Navigation.findNavController(view).navigate(R.id.nav_calcular_nota);
+        }
+
+
+    }

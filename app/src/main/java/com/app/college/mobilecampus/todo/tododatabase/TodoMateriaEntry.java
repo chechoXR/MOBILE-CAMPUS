@@ -5,5 +5,6 @@ public class TodoMateriaEntry {
     public static final String TABLE_NAME = "MATERIA";
     public static final String ID = "_id";
     public static final String MATERIA = "nombre";
+    public static final String CORREO_PROFESOR ="correo_profesor";
 
 }
