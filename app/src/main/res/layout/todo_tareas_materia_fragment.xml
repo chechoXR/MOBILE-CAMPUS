@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/todo_tareas_materia">
+    android:id="@+id/todo_tareas_materia"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</RelativeLayout>
+    <Spinner
+        android:id="@+id/SortByMateria"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:spinnerMode="dialog"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </Spinner>
+</LinearLayout>
