@@ -40,7 +40,8 @@ public class TodoDbHelper extends SQLiteOpenHelper {
         //CREA TABLA MATERIAS
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + TodoMateriaEntry.TABLE_NAME + "("
                 + TodoMateriaEntry.ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + TodoMateriaEntry.MATERIA + " TEXT NOT NULL" +
+                + TodoMateriaEntry.MATERIA + " TEXT NOT NULL,"
+                + TodoMateriaEntry.CORREO_PROFESOR + " TEXT NOT NULL" +
                 ")");
 
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS " + TodoTareaEntry.TABLE_NAME + "("

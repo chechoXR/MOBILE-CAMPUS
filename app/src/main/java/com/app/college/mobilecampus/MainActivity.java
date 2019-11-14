@@ -135,16 +135,30 @@ public class MainActivity extends AppCompatActivity {
         Navigation.findNavController(view).navigate(R.id.action_home_to_requisitos);
     }
 
-    public static void moveFloatingButton(float Y, long time){
 
-
-        if(time-lastMovementFloatingButton > 1000){
-            fab.setTranslationY(Y);
-
-        lastMovementFloatingButton = System.currentTimeMillis();
-        }
+    public void todo(View view){
+        Navigation.findNavController(view).navigate(R.id.nav_todo);
     }
 
+    public static void moveFloatingButton(float Y, long time) {
 
 
-}
+        if (time - lastMovementFloatingButton > 1000) {
+            fab.setTranslationY(Y);
+
+            lastMovementFloatingButton = System.currentTimeMillis();
+        }
+
+    }
+
+    
+
+
+    
+    
+        public void calcularNota (View view){
+            Navigation.findNavController(view).navigate(R.id.nav_calcular_nota);
+        }
+
+
+    }

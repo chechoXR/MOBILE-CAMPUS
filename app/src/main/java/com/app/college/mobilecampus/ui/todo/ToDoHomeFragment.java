@@ -10,15 +10,14 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.app.college.mobilecampus.R;
 import com.app.college.mobilecampus.todo.Tarea;
 import com.app.college.mobilecampus.todo.todoUtilSQL;
 import com.app.college.mobilecampus.todo.tododatabase.TodoDbHelper;
 import com.app.college.mobilecampus.todo.tododatabase.TodoTareaEntry;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -29,6 +28,7 @@ public class ToDoHomeFragment extends Fragment {
     private ArrayList<Tarea> tareas;
     private TodoDbHelper todoDbHelper;
     private SQLiteDatabase db;
+    private static TareaAdapter myTareaAdapter;
 
     @Nullable
     @Override
@@ -39,10 +39,13 @@ public class ToDoHomeFragment extends Fragment {
         listaTareas.setLayoutManager(layoutManager);
         getListaTareas();
         initAdapter();
+        attach();
+
         return v;
     }
+
     private void initAdapter(){
-        TareaAdapter myTareaAdapter = new TareaAdapter(tareas);
+        myTareaAdapter = new TareaAdapter(tareas);
         listaTareas.setAdapter(myTareaAdapter);
     }
     private void getListaTareas() {
@@ -90,4 +93,20 @@ public class ToDoHomeFragment extends Fragment {
     }
 
 
+    public void attach(){
+        SwipeController sc = new SwipeController(new SwipeAction() {
+
+            @Override
+            public void Swipe(int id) {
+                myTareaAdapter.notifyDataSetChanged();
+                System.out.println("_______________________________________________________________________________");
+                System.out.println(tareas.get(id).toString());
+                System.out.println();
+                System.out.println("_______________________________________________________________________________");
+            }
+        });
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(sc);
+        itemTouchHelper.attachToRecyclerView(listaTareas);
+    }
 }

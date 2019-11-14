@@ -1,10 +1,8 @@
 package com.app.college.mobilecampus.ui.todo;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,9 +14,11 @@ import java.util.ArrayList;
 
 public class TareaAdapter extends RecyclerView.Adapter <TareaViewHolder> {
     private ArrayList<Tarea> listaTareas;
+
     public TareaAdapter(ArrayList<Tarea> listaTareas){
         this.listaTareas=listaTareas;
     }
+
     @NonNull
     @Override
     public TareaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,5 +40,9 @@ public class TareaAdapter extends RecyclerView.Adapter <TareaViewHolder> {
     @Override
     public int getItemCount() {
         return listaTareas.size();
+    }
+
+    public void update(){
+        notifyDataSetChanged();
     }
 }

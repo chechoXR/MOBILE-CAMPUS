@@ -1,5 +1,7 @@
 package com.app.college.mobilecampus.model;
 
+import androidx.annotation.NonNull;
+
 public class Estudiante {
 
     private String nombre,apellido,correo,usuario,id;
@@ -44,7 +46,9 @@ public class Estudiante {
         this.usuario = usuario;
     }
 
+
     public String getId() { return id; }
 
     public void setId(String id) { this.id = id; }
+
 }
