@@ -80,6 +80,7 @@ public class ToDoAdd extends AppCompatActivity {
         TodoDbHelper todoDbHelper = new TodoDbHelper(this);
         SQLiteDatabase db = todoDbHelper.getWritableDatabase();
         todoUtilSQL todoutilSQL = new todoUtilSQL(db);
+
         Cursor c = todoutilSQL.getIdMateria();
         int id=0;
         if(c!=null && c.getColumnCount()!=0) {
@@ -97,8 +98,14 @@ public class ToDoAdd extends AppCompatActivity {
         if(nombre.getText().toString().trim().equals("") || fecha_ini.getText().toString().trim().equals(""))
             utils.showToast("Datos incompletos",this);
         else{
+            ArrayList<Materia> materias = ArrayListGetAllMateria();
+            int mat_id=0;
+            for(int i=0; i< materias.size();i++)
+                if(((String)materia.getSelectedItem()).equals(materias.get(i).getNombre()))
+                    mat_id = materias.get(i).getId();
+
             todoutilSQL.insertTarea( nombre.getText().toString(),descripcion.getText().toString(),fecha_ini.getText().toString(),fecha_fin.getText().toString(),
-                 -1,materia.getSelectedItemPosition(),0);
+                 -1,mat_id,0);
             utils.showToast("TAREA AGREGADA ",this);
         }
         Intent intent = new Intent(this, MainActivity.class);
