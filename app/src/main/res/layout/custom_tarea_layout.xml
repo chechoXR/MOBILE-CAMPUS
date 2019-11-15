@@ -30,60 +30,59 @@
                     android:id="@+id/NombreMat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:width="230dp"
-
+                    android:layout_marginLeft="8dp"
                     android:layout_weight="1"
-                    android:scrollHorizontally="false"
+                    android:width="230dp"
+                    android:ellipsize="end"
                     android:gravity="left"
+                    android:scrollHorizontally="false"
                     android:text="Crear DB SQLITE"
                     android:textColor="@color/azul_oscuro"
-                    android:textStyle="bold"
-                    android:textSize="30dp" />
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tareaDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:scrollHorizontally="false"
+                    android:textColor="@color/azul_oscuro"
+                    android:textSize="15dp">
+
+                </TextView>
 
                 <TextView
                     android:id="@+id/fechaEnd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
                     android:layout_weight="1"
                     android:text="15/11/2019"
                     android:textColor="@color/azul_oscuro"
-                    android:textSize="30dp" />
+                    android:textSize="15dp" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/Card_buttons"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/materiaDeTarea"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/blanco"
-                android:orientation="horizontal"
+                android:text="Materia"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:width="230dp"
+                android:ellipsize="end"
                 android:gravity="right"
+                android:scrollHorizontally="false"
+                android:textColor="@color/azul_oscuro"
+                android:textSize="20dp"
+                android:textStyle="bold"
                 >
+            </TextView>
 
-                <ImageButton
-                    android:id="@+id/checkButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginLeft="14dp"
-                    android:src="@drawable/ic_check_44"
-                    android:background="@drawable/circle_button_check">
-                </ImageButton>
-
-
-                <ImageButton
-                    android:id="@+id/deleteButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="18dp"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginRight="14dp"
-                    android:src="@drawable/ic_delete_44"
-                    android:background="@drawable/circle_button_check">
-                </ImageButton>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 

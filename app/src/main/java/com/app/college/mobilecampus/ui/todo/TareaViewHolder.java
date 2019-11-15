@@ -13,15 +13,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.app.college.mobilecampus.R;
 import com.google.android.material.behavior.SwipeDismissBehavior;
 
+import org.w3c.dom.Text;
+
 
 public class TareaViewHolder extends RecyclerView.ViewHolder {
     public TextView nombre;
+    public TextView descripcion;
     public TextView fecha;
+    public TextView materia;
     private CardView textCardView;
     public TareaViewHolder(View view){
         super(view);
         this.nombre = (TextView) itemView.findViewById(R.id.NombreMat);
+        this.descripcion = (TextView) itemView.findViewById(R.id.tareaDesc);
         this.fecha = (TextView) itemView.findViewById(R.id.fechaEnd);
+        this.materia = (TextView) itemView.findViewById(R.id.materiaDeTarea);
         textCardView = (CardView) view.findViewById(R.id.Full_Card);
         //implementSwipeDismiss();
     }
