@@ -21,7 +21,6 @@
                 android:layout_marginTop="50dp"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName"
                 app:layout_constraintStart_toEndOf="@+id/textView8"
                 app:layout_constraintTop_toBottomOf="@+id/logo" />
 
@@ -137,7 +136,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/logo_poli" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/materia"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"
@@ -147,51 +146,6 @@
                 app:layout_constraintStart_toEndOf="@+id/textView12"
                 app:layout_constraintTop_toBottomOf="@+id/fechaFin" />
 
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_marginStart="15dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:gravity="center_vertical"
-                android:text="Calificacion :"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
-            <EditText
-                android:id="@+id/calificacion"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                app:layout_constraintStart_toEndOf="@+id/textView13"
-                app:layout_constraintTop_toBottomOf="@+id/materia" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_marginStart="15dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:gravity="center_vertical"
-                android:text="Entregada :"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
-            <EditText
-                android:id="@+id/completado"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="textPersonName"
-                app:layout_constraintStart_toEndOf="@+id/textView14"
-                app:layout_constraintTop_toBottomOf="@+id/calificacion" />
 
             <Button
                 android:id="@+id/añadir_tarea"
@@ -201,7 +155,7 @@
                 android:layout_marginEnd="72dp"
                 android:text="Añadir"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/completado" />
+                app:layout_constraintTop_toBottomOf="@+id/materia" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
