@@ -24,4 +24,5 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.app.college.mobilecampus", appContext.getPackageName());
     }
+
 }

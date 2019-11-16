@@ -47,7 +47,7 @@ public class BienestarFragment extends Fragment {
                 BienestarListView bienestarListView = new BienestarListView(getActivity(),BienestarConsumer.bienestar);
                 listView.setAdapter(bienestarListView);
             }
-        }, 3000);
+        }, 2500);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
