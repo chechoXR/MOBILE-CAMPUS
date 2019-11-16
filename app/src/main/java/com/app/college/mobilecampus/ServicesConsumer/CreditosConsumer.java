@@ -30,7 +30,7 @@ public class CreditosConsumer {
     }
 
     public void loadCreditos (){
-        Toast.makeText(context, "Codigo = "+ LoginConsumer.estudiante.getCodigo(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Codigo = "+ LoginConsumer.getCurrentSession(context).getCodigo(), Toast.LENGTH_SHORT).show();
         if (utils.checkConectivity(context)){
             String URL = CREDITOS_REQUEST + LoginConsumer.estudiante.getCodigo();
             StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, (new Response.Listener<String>() {

@@ -44,8 +44,11 @@ public class BienestarFragment extends Fragment {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                BienestarListView bienestarListView = new BienestarListView(getActivity(),BienestarConsumer.bienestar);
-                listView.setAdapter(bienestarListView);
+                if(BienestarConsumer.bienestar!=null){
+                    BienestarListView bienestarListView = new BienestarListView(getActivity(),BienestarConsumer.bienestar);
+                    listView.setAdapter(bienestarListView);
+                }
+
             }
         }, 2500);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -57,4 +60,6 @@ public class BienestarFragment extends Fragment {
         });
 
     }
+
+
 }

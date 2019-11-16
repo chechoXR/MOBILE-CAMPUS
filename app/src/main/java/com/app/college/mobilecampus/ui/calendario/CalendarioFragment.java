@@ -71,11 +71,10 @@ public class CalendarioFragment extends Fragment {
     private CalendarioViewModel calendarioViewModel;
     private CompactCalendarView calendarView;
     private SimpleDateFormat dateFormatForMonth = new SimpleDateFormat("MMM - yyyy", Locale.getDefault());
-    private SimpleDateFormat dateFormatForDayAndMonth = new SimpleDateFormat("DD - MMM", Locale.getDefault());
+    private SimpleDateFormat dateFormatForDayAndMonth = new SimpleDateFormat("DD - MMM -yyyy", Locale.getDefault());
 
     private TextView textView,descripcion,info_text;
     private HashMap<String,List<String>> description_dates = new HashMap<String, List<String>>();
-
 
     private SignInButton signInButton;
     static final int SIGN_IN_CODE = 400;
@@ -83,10 +82,35 @@ public class CalendarioFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        descripcion.setText("");
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getActivity());
         if(account!=null) requestSignIn();
 
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        descripcion.setText("");
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        calendarView.removeAllEvents();
+        descripcion.setText("");
+
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        calendarView.removeAllEvents();
+        descripcion.setText("");
+    }
+
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_calendario, container, false);
@@ -115,10 +139,9 @@ public class CalendarioFragment extends Fragment {
                         if(description_dates.get(dateFormatForDayAndMonth.format(dateClicked))!=null)
                         for(String value:description_dates.get(dateFormatForDayAndMonth.format(dateClicked))){
                             descripcion_+= value + "\n";
-                            Log.i("asda",descripcion_);
-
                         }
                         descripcion.setText(descripcion_);
+                        descripcion_ = "";
                     }
                 });
             }
@@ -239,7 +262,6 @@ public class CalendarioFragment extends Fragment {
         });
 
     }
-
 
     private void hideLogin(){
         this.signInButton.setVisibility(View.GONE);

@@ -22,7 +22,8 @@ public class UserSessionDbHelper extends SQLiteOpenHelper {
                 + UserSessionEntry.NAME + " TEXT NOT NULL,"
                 + UserSessionEntry.LASTNAME + " TEXT NOT NULL,"
                 + UserSessionEntry.EMAIL + " TEXT NOT NULL,"
-                + UserSessionEntry.ACTIVE + " TEXT NOT NULL"+
+                + UserSessionEntry.ACTIVE + " TEXT NOT NULL,"
+                + UserSessionEntry.CODIGO + " TEXT NOT NULL"+
                 ")");
     }
 

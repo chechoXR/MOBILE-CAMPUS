@@ -61,4 +61,7 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
     implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
     implementation 'com.github.sundeepk:compact-calendar-view:3.0.0'
+
+    //PDFViewer
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 }

@@ -11,6 +11,5 @@ public abstract class UserSessionEntry implements BaseColumns {
     public static final String LASTNAME = "lastname";
     public static final String EMAIL = "email";
     public static final String ACTIVE = "active";
-
-
+    public static final String CODIGO = "codigo";
 }
