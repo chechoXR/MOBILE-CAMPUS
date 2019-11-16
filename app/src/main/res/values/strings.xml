@@ -35,4 +35,8 @@
     <string name="log_out" />
     <string name="requisitos_de_grado" />
     <string name="_2do_corte">2do corte</string>
+
+
+    <string name="server_client_id"> 839358185985-9ufnq9ioc25l316b8upf19bm5jnsn151.apps.googleusercontent.com</string>
+    
 </resources>
