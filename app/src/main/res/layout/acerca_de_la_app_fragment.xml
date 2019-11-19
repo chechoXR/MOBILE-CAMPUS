@@ -27,7 +27,7 @@
             android:layout_height="370dp"
             android:gravity="center|center_vertical"
             android:lines="@android:integer/config_longAnimTime"
-            android:text="Mobile Campus\n\nConsulta información de créditos, semilleros,\ncalendario académico, notas,\nactividades de bienestar.\nY progreso de las mismas.\n\nDesarrollada por:\nBrayan Felipe Barragán Núñez\nJaime Stiven León Tunjano\nJosé Luis Novoa Nieto\nCamilo Andrés Piza Hernández\nSergio Esteban Ramírez Cuesta\nJuan Pablo Salamanca Cortés"
+            android:text="Mobile Campus\n2019\n\nConsulta información de créditos, semilleros,\ncalendario académico, notas,\nactividades de bienestar.\nY progreso de las mismas.\n\nDesarrollada por:\nBrayan Felipe Barragán Núñez\nJaime Stiven León Tunjano\nJosé Luis Novoa Nieto\nCamilo Andrés Piza Hernández\nSergio Esteban Ramírez Cuesta\nJuan Pablo Salamanca Cortés"
             android:textColor="@color/azul_oscuro"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
