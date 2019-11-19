@@ -106,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calendario (View view){
-
         Navigation.findNavController(view).navigate(R.id.action_home_to_calendario);
     }
 

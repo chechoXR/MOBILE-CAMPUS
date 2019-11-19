@@ -23,7 +23,7 @@
                 android:gravity="left"
                 android:text="TextView"
                 android:textColor="@color/azul_oscuro"
-                android:textSize="28dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -33,7 +33,7 @@
                 android:gravity="center_vertical"
                 android:text="TextView"
                 android:textColor="@color/azul_oscuro"
-                android:textSize="28dp" />
+                android:textSize="15dp" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
