@@ -36,6 +36,30 @@
     <string name="requisitos_de_grado" />
     <string name="_2do_corte">2do corte</string>
 
+    <string name="group1">Paz y salvos</string>
+    <string name="group2">Paz y salvo Registro y control</string>
+    <string name="group3">Requisitos Adicionales</string>
+
+    <string-array name="group1">
+        <item>Paz y salvo académico</item>
+        <item>Paz y salvo financiero</item>
+        <item>Paz y salvo biblioteca</item>
+        <item>Paz y salvo Centro de Medios Audiovisuales</item>
+    </string-array>
+
+    <string-array name="group2">
+        <item>Pruebas Icfes</item>
+        <item>Prueba saber-pro (ECAES)</item>
+        <item>Diploma de bachiller o acta de grado</item>
+        <item>Titulo SENA (Si aplica)</item>
+        <item>Fotocopia cédula</item>
+        <item>Fotocopia libreta militar para hombres (Ya no es un requisito necesario - Ver Ley 1738)</item>
+    </string-array>
+
+    <string-array name="group3">
+        <item>Reconocimiento de créditos académicos (pensum actual)</item>
+        <item>Requisito de inglés para los grados de profesional</item>
+    </string-array>
 
     <string name="server_client_id"> 839358185985-9ufnq9ioc25l316b8upf19bm5jnsn151.apps.googleusercontent.com</string>
     
