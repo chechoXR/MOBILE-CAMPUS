@@ -6,97 +6,102 @@
     android:layout_height="match_parent"
     tools:context=".ui.calendario.CalendarioFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/month_year"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"
-            android:textColor="@color/azul_oscuro"
-            android:text="mes-año"
-            app:layout_constraintBottom_toTopOf="@+id/calendario_academico"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
+        <androidx.constraintlayout.widget.ConstraintLayout
 
-
-        <com.github.sundeepk.compactcalendarview.CompactCalendarView
-            android:id="@+id/calendario_academico"
-            android:layout_width="366dp"
-            android:layout_height="220dp"
-            android:layout_marginTop="50dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="1dp"
-            app:compactCalendarMultiEventIndicatorColor="#fff"
-            app:compactCalendarTargetHeight="250dp"
-            app:compactCalendarTextColor="@color/azul_oscuro"
-            app:compactCalendarTextSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linear_1"
-            app:layout_constraintTop_toTopOf="parent"
-            app:mcv_selectionColor="@color/azul_oscuro"
-            app:mcv_showOtherDates="all" />
-
-
-        <TextView
-            android:id="@+id/descripcion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
-            android:layout_marginEnd="16dp"
-            android:textColor="@color/azul_oscuro"
-            android:textSize="15dp"
-            android:textStyle="bold"
-            android:gravity="center_horizontal"
-            android:text=""
-            app:layout_constraintBottom_toTopOf="@+id/linear_1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calendario_academico"></TextView>
-
-        <LinearLayout
-            android:id="@+id/linear_1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center"
-            android:layout_marginTop="100dp"
-            android:gravity="bottom|center"
-            android:orientation="vertical"
-            android:paddingBottom="30dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calendario_academico"
-            app:layout_constraintVertical_bias="0.984">
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/info_text"
+                android:id="@+id/month_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Inicia Sesión con google para poder usar esta caracteristica"></TextView>
+                android:text="mes-año"
+                android:textColor="@color/azul_oscuro"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/calendario_academico"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"></TextView>
 
 
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/sign_in_button"
+            <com.github.sundeepk.compactcalendarview.CompactCalendarView
+                android:id="@+id/calendario_academico"
+                android:layout_width="366dp"
+                android:layout_height="220dp"
+                android:layout_marginTop="50dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="1dp"
+                app:compactCalendarMultiEventIndicatorColor="#fff"
+                app:compactCalendarTargetHeight="250dp"
+                app:compactCalendarTextColor="@color/azul_oscuro"
+                app:compactCalendarTextSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.488"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:mcv_selectionColor="@color/azul_oscuro"
+                app:mcv_showOtherDates="all" />
+
+
+            <TextView
+                android:id="@+id/descripcion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:focusable="true"></com.google.android.gms.common.SignInButton>
+                android:layout_marginStart="22dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_horizontal"
+                android:text=""
+                android:textColor="@color/azul_oscuro"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/linear_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calendario_academico"></TextView>
 
-        </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linear_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginTop="100dp"
+                android:gravity="bottom|center"
+                android:orientation="vertical"
+                android:paddingBottom="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calendario_academico"
+                app:layout_constraintVertical_bias="0.984">
+
+                <TextView
+                    android:id="@+id/info_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Inicia Sesión con google para poder usar esta caracteristica"></TextView>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/sign_in_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:focusable="true"></com.google.android.gms.common.SignInButton>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 </FrameLayout>
 
