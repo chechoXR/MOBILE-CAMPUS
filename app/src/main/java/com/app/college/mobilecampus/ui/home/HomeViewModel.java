@@ -8,6 +8,6 @@ UserSession user=new UserSession(0,null,null);
 
     public HomeViewModel() {
     }
-user
+
 
 }

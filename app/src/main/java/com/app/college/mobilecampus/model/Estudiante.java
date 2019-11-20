@@ -55,7 +55,7 @@ public class Estudiante {
         return "Estudiante{" +
                 "nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", codigo='" + id + '\'' +
+                ", codigo='" + codigo + '\'' +
                 '}';
     }
 
