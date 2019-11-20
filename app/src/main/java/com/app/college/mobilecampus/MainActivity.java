@@ -143,6 +143,10 @@ public class MainActivity extends AppCompatActivity {
         Navigation.findNavController(view).navigate(R.id.action_home_to_calcular_nota);
     }
 
+    public void logout(View view ){
+        startActivity(LoginConsumer.finishSession(this));
+    }
+
     public static void moveFloatingButton(float Y, long time) {
 
 

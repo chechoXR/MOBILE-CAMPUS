@@ -46,7 +46,6 @@ public class Estudiante {
         this.usuario = usuario;
     }
 
-
     public String getCodigo() { return codigo; }
 
     public void setCodigo(String id) { this.codigo = codigo; }

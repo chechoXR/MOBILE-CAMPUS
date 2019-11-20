@@ -61,13 +61,13 @@ public class SemillerosFragment extends Fragment {
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-
-                SemilleroListVIew semilleroListVIew = new SemilleroListVIew(getActivity(),SemilleroConsumer.semilleros);
-                listView.setAdapter(semilleroListVIew);
-                utils.showToast(SemilleroConsumer.semilleros.size()+"",getContext());
+                if(SemilleroConsumer.semilleros!=null) {
+                    SemilleroListVIew semilleroListVIew = new SemilleroListVIew(getActivity(), SemilleroConsumer.semilleros);
+                    listView.setAdapter(semilleroListVIew);
+                }
 
             }
-        }, 2000);
+        }, 2500);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
