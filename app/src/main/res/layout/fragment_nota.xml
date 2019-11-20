@@ -5,230 +5,235 @@
     android:layout_height="match_parent">
 
 
-    <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="650dp"
-
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="121dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
+            android:layout_height="wrap_content"
 
-            <TextView
-                android:id="@+id/textCalculoNota"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="40dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="121dp"
+                android:layout_gravity="center_horizontal"
                 android:gravity="center_horizontal"
-                android:text="CALCULO DE NOTAS"
-                android:textColor="@color/azul_oscuro"
-                android:textSize="30dp"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textCalculoNota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="40dp"
+                    android:gravity="center_horizontal"
+                    android:text="CALCULO DE NOTAS"
+                    android:textColor="@color/azul_oscuro"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:text="1er corte"
+                    android:textColor="@color/azul_oscuro"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/nota1"
+                    android:layout_width="121dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:ems="2"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberDecimal"
+                    android:queryHint="Ingrese nota"
+                    android:textColor="@color/azul_claro"
+                    android:textSize="24sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:text="30 %"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:text="2do corte"
+                    android:textColor="@color/azul_oscuro"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/nota2"
+                    android:layout_width="121dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:ems="2"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberDecimal"
+                    android:queryHint="Ingrese nota"
+                    android:textColor="@color/azul_claro"
+                    android:textSize="24sp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:text="30 %"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:text="3er corte"
+                    android:textColor="@color/azul_oscuro"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/nota3"
+                    android:layout_width="121dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:ems="2"
+                    android:gravity="center_horizontal"
+                    android:inputType="numberDecimal"
+                    android:queryHint="Ingrese nota"
+                    android:textColor="@color/azul_claro"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:text="40 %"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:text="Nota minima"
+                    android:textColor="@color/azul_oscuro"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TextView_notaFinal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:text=""
+                    android:textColor="@color/azul_claro"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Button_calcular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="50dp"
+                    android:background="@color/azul_oscuro"
+                    android:text="Calcular"
+                    android:textColor="@color/blanco" />
+
+                <Button
+                    android:id="@+id/Button_clear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="50dp"
+                    android:background="@color/azul_oscuro"
+                    android:text="Limpiar"
+                    android:textColor="@color/blanco" />
+
+
+            </LinearLayout>
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:text="1er corte"
-                android:textStyle="bold"
-                android:textColor="@color/azul_oscuro"/>
-
-            <EditText
-                android:id="@+id/nota1"
-                android:layout_width="121dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:queryHint="Ingrese nota"
-                android:textSize="24sp"
-                android:ems="2"
-                android:inputType="numberDecimal"
-                android:textColor="@color/azul_claro"
-                android:gravity="center_horizontal"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:text="30 %"
-                android:textStyle="bold"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
-
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:text="2do corte"
-                android:textStyle="bold"
-                android:textColor="@color/azul_oscuro"/>
-
-            <EditText
-                android:id="@+id/nota2"
-                android:layout_width="121dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:queryHint="Ingrese nota"
-                android:textSize="24sp"
-                android:ems="2"
-                android:inputType="numberDecimal"
-                android:textColor="@color/azul_claro"
-                android:gravity="center_horizontal"/>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:text="30 %"
-                android:textStyle="bold"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
-
-
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:text="3er corte"
-                android:textStyle="bold"
-                android:textColor="@color/azul_oscuro"/>
-
-            <EditText
-                android:id="@+id/nota3"
-                android:layout_width="121dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:queryHint="Ingrese nota"
-                android:textSize="24sp"
-                android:ems="2"
-                android:inputType="numberDecimal"
-                android:textColor="@color/azul_claro"
-                android:gravity="center_horizontal"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:text="40 %"
-                android:textStyle="bold"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:text="Nota minima"
-                android:textSize="20dp"
-                android:textColor="@color/azul_oscuro"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/TextView_notaFinal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:text=""
-                android:textColor="@color/azul_claro"
-                android:textSize="30dp"
-                android:textStyle="bold"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/Button_calcular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:text="Calcular"
-                android:textColor="@color/blanco"
-                android:background="@color/azul_oscuro"/>
-
-            <Button
-                android:id="@+id/Button_clear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="50dp"
-                android:textColor="@color/blanco"
-                android:text="Limpiar"
-                android:background="@color/azul_oscuro"/>
-
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
