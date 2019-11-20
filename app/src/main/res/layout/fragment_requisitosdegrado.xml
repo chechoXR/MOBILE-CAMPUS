@@ -11,120 +11,63 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/logo"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            android:contentDescription="TODO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo_poli" />
+            android:orientation="vertical">
 
-        <ProgressBar
-            android:id="@+id/progressBarCreditos"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="339dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="10dp"
-            android:progress="65"
-            android:progressBackgroundTint="@color/azul_claro"
-            android:progressTint="@color/azul_oscuro"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detalle_materia" />
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:contentDescription="TODO"
+                app:srcCompat="@drawable/logo_poli" />
 
-        <ProgressBar
-            android:id="@+id/progressBarMaterias"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="339dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="40dp"
-            android:progress="35"
-            android:progressBackgroundTint="@color/azul_claro"
-            android:progressTint="@color/azul_oscuro"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ReauisitosTxt" />
+            <TextView
+                android:id="@+id/requisitosTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:text="Requisitos de Grado"
+                android:textColor="@color/azul_oscuro"
+                android:textSize="30dp" />
 
-        <TextView
-            android:id="@+id/detalle_materia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="40dp"
-            android:text="Ver detalles"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressBarMaterias" />
+            <TextView
+                android:id="@+id/textCreditosTotales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:textSize="15dp"
+                android:text="Creditos totales"
+                android:textColor="@color/azul_oscuro" />
 
-        <TextView
-            android:id="@+id/ReauisitosTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Requisitos de Grado"
-            android:textColor="@color/azul_oscuro"
-            android:textSize="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo" />
+            <ProgressBar
+                android:id="@+id/progresoCreditosTotales"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="339dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="20dp"
+                android:progressBackgroundTint="@color/azul_claro"
+                android:progressTint="@color/azul_oscuro"
+                android:layout_gravity="center"
+                 />
 
-        <TextView
-            android:id="@+id/creditos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Creditos aprobadas 65%"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/progressBarCreditos"
-            app:layout_constraintStart_toStartOf="@+id/progressBarCreditos"
-            app:layout_constraintTop_toTopOf="@+id/progressBarCreditos" />
+            <ExpandableListView
+                android:id="@+id/_dynamic"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="533dp"></ExpandableListView>
 
-        <TextView
-            android:id="@+id/detalle_creditos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="40dp"
-            android:text="Ver detalles"
-            android:textStyle="bold|italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/progressBarCreditos" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/materias_aprobadas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Materias aprobadas 35%"
-            android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@+id/progressBarMaterias"
-            app:layout_constraintStart_toStartOf="@+id/progressBarMaterias"
-            app:layout_constraintTop_toTopOf="@+id/progressBarMaterias" />
-
-        <ListView
-            android:id="@+id/listRequisitos"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="100dp" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+
 
 </android.widget.FrameLayout>
