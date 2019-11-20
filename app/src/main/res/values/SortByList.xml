@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="SortByList">
+        <item>Fecha</item>
+        <item>Completas</item>
+        <item>Incompletas</item>
+        <item>Calificación</item>
+        <item>Materia</item>
+    </string-array>
+</resources>

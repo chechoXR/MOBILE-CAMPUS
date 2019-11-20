@@ -35,9 +35,11 @@
     </group>
 
 
+
     <item
         android:title="Funciones extra!"
         android:checkable="true">
+        <group android:checkableBehavior="single">
         <menu>
             <item
                 android:checkable="true"
@@ -50,6 +52,7 @@
                 android:icon="@drawable/ic_star"
                 android:title="@string/menu_calcular_nota" />
         </menu>
+        </group>
     </item>
 
 

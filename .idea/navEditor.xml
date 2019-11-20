@@ -79,7 +79,17 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_home_to_ToDo">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_home_to_bienestar">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_home_to_calcular_nota">
                               <value>
                                 <LayoutPositions />
                               </value>

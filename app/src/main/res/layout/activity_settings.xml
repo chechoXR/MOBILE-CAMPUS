@@ -6,84 +6,93 @@
     android:layout_height="match_parent"
     tools:context=".Settings">
 
-        <ImageView
-            android:id="@+id/logo"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            android:contentDescription="TODO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo_poli" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/ConfigTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="Configuración"
-            android:textColor="@color/azul_oscuro"
-            android:textSize="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-        <Switch
-            android:id="@+id/modOscuro"
-            android:layout_width="303dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="100dp"
-            android:text="Modo oscuro"
-            android:textAllCaps="false"
-            android:textColor="@color/azul_oscuro"
+                        <ImageView
+                            android:id="@+id/logo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="5dp"
+                            android:contentDescription="TODO"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/logo_poli" />
 
-            android:textCursorDrawable="@color/azul_claro"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ConfigTxt" />
+                        <TextView
+                            android:id="@+id/ConfigTxt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:text="Configuración"
+                            android:textColor="@color/azul_oscuro"
+                            android:textSize="30dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.498"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/logo" />
 
-        <Switch
-            android:id="@+id/notificaciones"
-            android:layout_width="303dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="20dp"
-            android:text="Notificaciones"
-            android:textColor="@color/azul_oscuro"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/modOscuro" />
+                        <Switch
+                            android:id="@+id/modOscuro"
+                            android:layout_width="303dp"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="100dp"
+                            android:text="Modo oscuro"
+                            android:textAllCaps="false"
+                            android:textColor="@color/azul_oscuro"
 
-        <TextView
-            android:id="@+id/cambiar_contraseña"
-            android:layout_width="303dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="20dp"
-            android:text="Cambiar contraseña"
-            android:textColor="@color/azul_oscuro"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/notificaciones" />
+                            android:textCursorDrawable="@color/azul_claro"
+                            android:textSize="20dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/ConfigTxt" />
 
-        <TextView
-            android:id="@+id/ayuda"
-            android:layout_width="303dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="20dp"
-            android:text="Ayuda"
-            android:textColor="@color/azul_oscuro"
-            android:textSize="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cambiar_contraseña" />
+                        <Switch
+                            android:id="@+id/notificaciones"
+                            android:layout_width="303dp"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Notificaciones"
+                            android:textColor="@color/azul_oscuro"
+                            android:textSize="20dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/modOscuro" />
 
+                        <TextView
+                            android:id="@+id/cambiar_contraseña"
+                            android:layout_width="303dp"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Cambiar contraseña"
+                            android:textColor="@color/azul_oscuro"
+                            android:textSize="20dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/notificaciones" />
+
+                        <TextView
+                            android:id="@+id/ayuda"
+                            android:layout_width="303dp"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Ayuda"
+                            android:textColor="@color/azul_oscuro"
+                            android:textSize="20dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/cambiar_contraseña" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

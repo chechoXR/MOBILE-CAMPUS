@@ -1,29 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/NombreMat"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/Full_Card"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/azul_oscuro"
-        android:text="Crear DB SQLITE"
-        android:gravity="center"
-        android:layout_weight="1"
-        android:textColor="@color/blanco"
-        android:textSize="30dp" />
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="8dp">
 
-    <TextView
-        android:id="@+id/fechaEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="30dp"
-        android:background="@android:color/black"
-        android:textColor="@color/blanco"
-        android:text="15/11/2019"/>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blanco"
+            android:orientation="horizontal">
 
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/Card_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/blanco"
+                android:orientation="vertical">
 
-</LinearLayout>
+                <TextView
+                    android:id="@+id/NombreMat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:width="230dp"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:scrollHorizontally="false"
+                    android:text="Crear DB SQLITE"
+                    android:textColor="@color/azul_oscuro"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tareaDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:scrollHorizontally="false"
+                    android:textColor="@color/azul_oscuro"
+                    android:textSize="15dp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/fechaEnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:text="15/11/2019"
+                    android:textColor="@color/azul_oscuro"
+                    android:textSize="15dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:id="@+id/materiaDeTarea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Materia"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:width="230dp"
+                android:ellipsize="end"
+                android:gravity="right"
+                android:scrollHorizontally="false"
+                android:textColor="@color/azul_oscuro"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                >
+            </TextView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
