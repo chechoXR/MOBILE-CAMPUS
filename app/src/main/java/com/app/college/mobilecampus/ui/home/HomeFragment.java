@@ -43,4 +43,7 @@ public class HomeFragment extends Fragment {
         return root;
     }
 
+    public static void finishSession(View view){
+
+    }
 }
