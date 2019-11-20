@@ -1,25 +1,13 @@
 package com.app.college.mobilecampus.ui.home;
-
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import com.app.college.mobilecampus.model.Estudiante;
+import com.app.college.mobilecampus.session.UserSession;
 
 public class HomeViewModel extends ViewModel {
-
-    private MutableLiveData<String> mText;
+UserSession user=new UserSession(0,null,null);
     private  String name;
 
-
     public HomeViewModel() {
-        name=Estudiante.class.getName();
-        mText = new MutableLiveData<>();
-        mText.setValue("Bienvennido"+ name);
     }
+user
 
-
-
-    public LiveData<String> getText() {
-        return mText;
-    }
 }

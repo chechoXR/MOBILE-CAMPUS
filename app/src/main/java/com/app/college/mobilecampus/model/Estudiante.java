@@ -50,4 +50,13 @@ public class Estudiante {
 
     public void setCodigo(String id) { this.codigo = codigo; }
 
+    @Override
+    public String toString() {
+        return "Estudiante{" +
+                "nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", codigo='" + id + '\'' +
+                '}';
+    }
+
 }
