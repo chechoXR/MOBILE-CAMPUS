@@ -27,6 +27,7 @@ public class BienestarListView extends ArrayAdapter<Bienestar> {
         this.cursos=cursos;
     }
 
+
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
