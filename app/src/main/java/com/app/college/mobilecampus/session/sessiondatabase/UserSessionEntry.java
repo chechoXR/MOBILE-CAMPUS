@@ -4,7 +4,7 @@ import android.provider.BaseColumns;
 
 public abstract class UserSessionEntry implements BaseColumns {
 
-    public static final String TABLE_NAME = "USER_SESSION_";
+    public static final String TABLE_NAME = "_USER_SESSION_";
     public static final String ID  = "_id";
     public static final String USER = "user";
     public static final String NAME = "name";

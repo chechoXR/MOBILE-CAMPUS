@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class UserSessionDbHelper extends SQLiteOpenHelper {
 
-    public static int DATABASE_VERSION =1;
+    public static int DATABASE_VERSION =2;
     public static String DATABASE_NAME="user_session.db";
 
     public UserSessionDbHelper(Context context){
@@ -23,12 +23,23 @@ public class UserSessionDbHelper extends SQLiteOpenHelper {
                 + UserSessionEntry.LASTNAME + " TEXT NOT NULL,"
                 + UserSessionEntry.EMAIL + " TEXT NOT NULL,"
                 + UserSessionEntry.ACTIVE + " TEXT NOT NULL,"
-                + UserSessionEntry.CODIGO + " TEXT NOT NULL"+
-                ")");
+                + UserSessionEntry.CODIGO + " TEXT NOT NULL "
+                + ")");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS "+UserSessionEntry.TABLE_NAME +"("
+                + UserSessionEntry._ID  + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + UserSessionEntry.USER + " TEXT NOT NULL,"
+                + UserSessionEntry.NAME + " TEXT NOT NULL,"
+                + UserSessionEntry.LASTNAME + " TEXT NOT NULL,"
+                + UserSessionEntry.EMAIL + " TEXT NOT NULL,"
+                + UserSessionEntry.ACTIVE + " TEXT NOT NULL,"
+                + UserSessionEntry.CODIGO + " TEXT NOT NULL "
+                + ")");
+
     }
 
 }

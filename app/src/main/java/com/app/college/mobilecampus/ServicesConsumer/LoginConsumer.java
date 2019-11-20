@@ -97,7 +97,6 @@ public class LoginConsumer {
                 intent.putExtra("usuario",estudiante.getUsuario());
                 intent.putExtra("correo",estudiante.getCorreo());
                 intent.putExtra("codigo",estudiante.getCodigo());
-
                 context.startActivity(intent);
             }else{
                 Login.resetLogin();
@@ -118,6 +117,7 @@ public class LoginConsumer {
         contentValues.put(UserSessionEntry.EMAIL,estudiante.getCorreo());
         contentValues.put(UserSessionEntry.ACTIVE,"1");
         contentValues.put(UserSessionEntry.CODIGO,estudiante.getCodigo());
+
         db.insert(UserSessionEntry.TABLE_NAME,null,contentValues);
     }
 
@@ -152,14 +152,14 @@ public class LoginConsumer {
                         estudiante.setNombre(c.getString(c.getColumnIndex(UserSessionEntry.NAME)));
                         estudiante.setCodigo(c.getString(c.getColumnIndex(UserSessionEntry.CODIGO)));
                         estudiante_ = new Estudiante(LoginConsumer.estudiante.getNombre(), LoginConsumer.estudiante.getApellido(),
-                                 LoginConsumer.estudiante.getCorreo(),LoginConsumer.estudiante.getUsuario(),LoginConsumer.estudiante.getCodigo());
-                        Log.i("Codigo Estudiante", estudiante_.getCodigo());
+                                 LoginConsumer.estudiante.getCorreo(),LoginConsumer.estudiante.getUsuario(),c.getString(c.getColumnIndex(UserSessionEntry.CODIGO)));
+                        Log.i("Codigo Estudiante CS", c.getString(c.getColumnIndex(UserSessionEntry.CODIGO)));
+
                         return estudiante_;
                     }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                return null;
             }
         }
         return null;

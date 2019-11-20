@@ -31,9 +31,8 @@ public class CreditosConsumer {
     }
 
     public void loadCreditos (){
-        Toast.makeText(context, "Codigo = "+LoginConsumer.estudiante.getCorreo(), Toast.LENGTH_SHORT).show();
         if (utils.checkConectivity(context)){
-            String URL = CREDITOS_REQUEST + LoginConsumer.estudiante.getCodigo();
+            String URL = CREDITOS_REQUEST + LoginConsumer.getCurrentSession(context).getCodigo();
             StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, (new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {

@@ -19,6 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.app.college.mobilecampus.Login;
+import com.app.college.mobilecampus.MainActivity;
 import com.app.college.mobilecampus.R;
 import com.app.college.mobilecampus.ServicesConsumer.LoginConsumer;
 import com.app.college.mobilecampus.model.Bienestar;
@@ -57,7 +59,8 @@ public class HorarioFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HorarioViewModel.class);
-        getPDFBytes(LoginConsumer.getCurrentSession(getContext()).getCodigo());
+        LoginConsumer loginConsumer = new LoginConsumer(getContext());
+        getPDFBytes(loginConsumer.getCurrentSession(getContext()).getCodigo());
         pdfView = getActivity().findViewById(R.id.pdfView);
 
     }
@@ -74,7 +77,7 @@ public class HorarioFragment extends Fragment {
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        utils.showToast("No se encontro un horario.",getContext());
                     }
                 });
                 RequestQueue requestQueue = Volley.newRequestQueue(getContext());

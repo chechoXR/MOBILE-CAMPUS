@@ -174,14 +174,12 @@ public class CalendarioFragment extends Fragment {
         if(account == null) {
             signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestEmail()
-                    .requestScopes(new Scope(CalendarScopes.CALENDAR_EVENTS_READONLY))
+                    .requestScopes(new Scope(CalendarScopes.CALENDAR))
                     .build();
 
             GoogleSignInClient client = GoogleSignIn.getClient(getActivity(), signInOptions);
             startActivityForResult(client.getSignInIntent(), SIGN_IN_CODE);
         }
-        GoogleSignInClient client = GoogleSignIn.getClient(getActivity(), signInOptions);
-        handleSignInIntent(client.getSignInIntent());
 
     }
 
@@ -219,10 +217,6 @@ public class CalendarioFragment extends Fragment {
                                                 .setOrderBy("startTime")
                                                 .setSingleEvents(true)
                                                 .execute();
-                                    } catch (Exception e) {
-                                        startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), SIGN_IN_CODE);
-                                    }
-                                    try{
                                         List<Event> items = events.getItems();
                                         if (items.isEmpty()) {
                                             System.out.println("No upcoming events found.");
@@ -239,11 +233,15 @@ public class CalendarioFragment extends Fragment {
                                                 setEventInCalendar(event);
                                             }
                                         }
-                                    }catch (Exception e){
+                                    }catch (UserRecoverableAuthIOException e){
+                                        startActivityForResult(e.getIntent(), SIGN_IN_CODE);
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
                                     }
                                 }
                             });
                         }catch (Exception e){
+                            e.printStackTrace();
 
                         }
 
@@ -275,10 +273,6 @@ public class CalendarioFragment extends Fragment {
                                                 .setOrderBy("startTime")
                                                 .setSingleEvents(true)
                                                 .execute();
-                                    } catch (Exception e) {
-                                        startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), SIGN_IN_CODE);
-                                    }
-                                    try{
                                         List<Event> items = events.getItems();
                                         if (items.isEmpty()) {
                                             System.out.println("No upcoming events found.");
@@ -295,11 +289,15 @@ public class CalendarioFragment extends Fragment {
                                                 setEventInCalendar(event);
                                             }
                                         }
-                                    }catch (Exception e){
+                                    }catch (UserRecoverableAuthIOException e){
+                                        startActivityForResult(e.getIntent(), SIGN_IN_CODE);
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
                                     }
                                 }
                             });
                         }catch (Exception e){
+                            e.printStackTrace();
 
                         }
 
