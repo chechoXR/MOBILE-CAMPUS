@@ -3,6 +3,7 @@ package com.app.college.mobilecampus.ui.bienestar;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,8 +46,12 @@ public class BienestarFragment extends Fragment {
         handler.postDelayed(new Runnable() {
             public void run() {
                 if(BienestarConsumer.bienestar!=null){
-                    BienestarListView bienestarListView = new BienestarListView(getActivity(),BienestarConsumer.bienestar);
-                    listView.setAdapter(bienestarListView);
+                    try{
+                        BienestarListView bienestarListView = new BienestarListView(getActivity(),BienestarConsumer.bienestar);
+                        listView.setAdapter(bienestarListView);
+
+                    }catch (NullPointerException ex){
+                    }
                 }
 
             }

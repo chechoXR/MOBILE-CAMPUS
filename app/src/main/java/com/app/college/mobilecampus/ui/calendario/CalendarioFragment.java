@@ -21,12 +21,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.android.volley.Cache;
 import com.android.volley.toolbox.StringRequest;
 import com.app.college.mobilecampus.MainActivity;
 import com.app.college.mobilecampus.R;
@@ -44,6 +46,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
+import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException;
+import com.google.api.client.googleapis.util.Utils;
 import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.util.DateTime;
 import com.google.api.services.calendar.Calendar;
@@ -78,13 +82,16 @@ public class CalendarioFragment extends Fragment {
 
     private SignInButton signInButton;
     static final int SIGN_IN_CODE = 400;
+    private GoogleSignInAccount account;
 
     @Override
     public void onStart() {
         super.onStart();
+        hideLogin();
         descripcion.setText("");
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getActivity());
-        if(account!=null) requestSignIn();
+        account = GoogleSignIn.getLastSignedInAccount(getActivity());
+        if(account!=null) handleAlreadySignIn(account);
+        else showLogin();
 
     }
 
@@ -163,13 +170,19 @@ public class CalendarioFragment extends Fragment {
     }
 
     private void requestSignIn() {
-        GoogleSignInOptions signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .requestScopes(new Scope(CalendarScopes.CALENDAR_EVENTS_READONLY))
-                .build();
+        GoogleSignInOptions signInOptions = null;
+        if(account == null) {
+            signInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestEmail()
+                    .requestScopes(new Scope(CalendarScopes.CALENDAR_EVENTS_READONLY))
+                    .build();
 
-        GoogleSignInClient client = GoogleSignIn.getClient(getActivity(),signInOptions);
-        startActivityForResult(client.getSignInIntent(),SIGN_IN_CODE);
+            GoogleSignInClient client = GoogleSignIn.getClient(getActivity(), signInOptions);
+            startActivityForResult(client.getSignInIntent(), SIGN_IN_CODE);
+        }
+        GoogleSignInClient client = GoogleSignIn.getClient(getActivity(), signInOptions);
+        handleSignInIntent(client.getSignInIntent());
+
     }
 
     @Override
@@ -194,9 +207,9 @@ public class CalendarioFragment extends Fragment {
                             AsyncTask.execute(new Runnable() {
                                 @Override
                                 public void run() {
-                                    GoogleAccountCredential credetial = GoogleAccountCredential.usingOAuth2(getContext(), Collections.singleton(CalendarScopes.CALENDAR_READONLY));
+                                    GoogleAccountCredential credetial = GoogleAccountCredential.usingOAuth2(getContext(), Collections.singleton(CalendarScopes.CALENDAR_EVENTS));
                                     credetial.setSelectedAccount(googleSignInAccount.getAccount());
-                                    Calendar calendar = new Calendar.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(),credetial)
+                                    Calendar calendar = new Calendar.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credetial)
                                             .setApplicationName("Mobile Campus")
                                             .build();
                                     DateTime now = new DateTime(System.currentTimeMillis());
@@ -206,26 +219,27 @@ public class CalendarioFragment extends Fragment {
                                                 .setOrderBy("startTime")
                                                 .setSingleEvents(true)
                                                 .execute();
-                                    } catch (IOException e) {
-                                        e.printStackTrace();
+                                    } catch (Exception e) {
+                                        startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), SIGN_IN_CODE);
                                     }
+                                    try{
+                                        List<Event> items = events.getItems();
+                                        if (items.isEmpty()) {
+                                            System.out.println("No upcoming events found.");
+                                        } else {
+                                            System.out.println("Upcoming events");
+                                            for (Event event : items) {
+                                                DateTime start = event.getStart().getDateTime();
+                                                if (start == null) {
+                                                    start = event.getStart().getDate();
+                                                }
+                                                Log.i("event_sumary",event.getSummary());
+                                                Log.i("event_description",event.getDescription());
 
-                                    List<Event> items = events.getItems();
-                                    if (items.isEmpty()) {
-                                        System.out.println("No upcoming events found.");
-                                    } else {
-                                        System.out.println("Upcoming events");
-                                        for (Event event : items) {
-                                            DateTime start = event.getStart().getDateTime();
-                                            if (start == null) {
-                                                start = event.getStart().getDate();
+                                                setEventInCalendar(event);
                                             }
-                                            Log.i("event_sumary",event.getSummary());
-                                            Log.i("event_description",event.getDescription());
-
-                                            setEventInCalendar(event);
-
                                         }
+                                    }catch (Exception e){
                                     }
                                 }
                             });
@@ -242,6 +256,57 @@ public class CalendarioFragment extends Fragment {
                      }
         });
     }
+
+    private void handleAlreadySignIn(final GoogleSignInAccount account) {
+
+                        try {
+                            AsyncTask.execute(new Runnable() {
+                                @Override
+                                public void run() {
+                                    GoogleAccountCredential credetial = GoogleAccountCredential.usingOAuth2(getContext(), Collections.singleton(CalendarScopes.CALENDAR_EVENTS));
+                                    credetial.setSelectedAccount(account.getAccount());
+                                    Calendar calendar = new Calendar.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), credetial)
+                                            .setApplicationName("Mobile Campus")
+                                            .build();
+                                    DateTime now = new DateTime(System.currentTimeMillis());
+                                    Events events = null;
+                                    try {
+                                        events = calendar.events().list("t38odp0eg92pi2ij6d9qp25ttk@group.calendar.google.com")
+                                                .setOrderBy("startTime")
+                                                .setSingleEvents(true)
+                                                .execute();
+                                    } catch (Exception e) {
+                                        startActivityForResult(((UserRecoverableAuthIOException) e).getIntent(), SIGN_IN_CODE);
+                                    }
+                                    try{
+                                        List<Event> items = events.getItems();
+                                        if (items.isEmpty()) {
+                                            System.out.println("No upcoming events found.");
+                                        } else {
+                                            System.out.println("Upcoming events");
+                                            for (Event event : items) {
+                                                DateTime start = event.getStart().getDateTime();
+                                                if (start == null) {
+                                                    start = event.getStart().getDate();
+                                                }
+                                                Log.i("event_sumary",event.getSummary());
+                                                Log.i("event_description",event.getDescription());
+
+                                                setEventInCalendar(event);
+                                            }
+                                        }
+                                    }catch (Exception e){
+                                    }
+                                }
+                            });
+                        }catch (Exception e){
+
+                        }
+
+
+                    }
+
+
 
     private void setEventInCalendar(final Event event) {
         getActivity().runOnUiThread(new Runnable() {
@@ -266,5 +331,10 @@ public class CalendarioFragment extends Fragment {
     private void hideLogin(){
         this.signInButton.setVisibility(View.GONE);
         this.info_text.setVisibility(View.GONE);
+    }
+
+    private void showLogin(){
+        this.signInButton.setVisibility(View.VISIBLE);
+        this.info_text.setVisibility(View.VISIBLE);
     }
 }

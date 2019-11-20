@@ -25,12 +25,13 @@ public class CreditosConsumer {
     public static Creditos creditos = new Creditos();
     private Context context;
 
+
     public CreditosConsumer (Context context){
         this.context=context;
     }
 
     public void loadCreditos (){
-        Toast.makeText(context, "Codigo = "+ LoginConsumer.getCurrentSession(context).getCodigo(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Codigo = "+LoginConsumer.estudiante.getCorreo(), Toast.LENGTH_SHORT).show();
         if (utils.checkConectivity(context)){
             String URL = CREDITOS_REQUEST + LoginConsumer.estudiante.getCodigo();
             StringRequest stringRequest = new StringRequest(Request.Method.GET, URL, (new Response.Listener<String>() {

@@ -52,8 +52,7 @@ public class LoginConsumer {
                                     String apellido = jsonObject.getString("apellido");
                                     String email = jsonObject.getString("email");
                                     String usuario = jsonObject.getString("usuario");
-                                    String codigo = jsonObject.getString("id");
-
+                                    String codigo = jsonObject.getLong("id") + "";
                                     estudiante = new Estudiante(nombre, apellido, email, usuario, codigo);
                                     utils.showToast("Bienvenido " + nombre,context.getApplicationContext());
                                     nextStep(true, context);
@@ -117,9 +116,8 @@ public class LoginConsumer {
         contentValues.put(UserSessionEntry.NAME,estudiante.getNombre());
         contentValues.put(UserSessionEntry.LASTNAME,estudiante.getApellido());
         contentValues.put(UserSessionEntry.EMAIL,estudiante.getCorreo());
-
         contentValues.put(UserSessionEntry.ACTIVE,"1");
-
+        contentValues.put(UserSessionEntry.CODIGO,estudiante.getCodigo());
         db.insert(UserSessionEntry.TABLE_NAME,null,contentValues);
     }
 
@@ -131,12 +129,13 @@ public class LoginConsumer {
         estudiante.setApellido(null);
         estudiante.setCorreo(null);
         estudiante.setUsuario(null);
+        estudiante.setCodigo(null);
 
         return new Intent(context,Login.class);
     }
 
-    public static Estudiante getCurrentSession(Context context){
-        Estudiante estudiante ;
+    public synchronized static Estudiante getCurrentSession(Context context){
+        Estudiante estudiante_ = null ;
         UserSessionDbHelper session = new UserSessionDbHelper(context.getApplicationContext());
         SQLiteDatabase db = session.getReadableDatabase();
         //Retorna todos los datos que se encuentran en la base de datos
@@ -147,15 +146,15 @@ public class LoginConsumer {
                 while (!c.isAfterLast()) {
                     int isActive = Integer.parseInt(c.getString(c.getColumnIndex(UserSessionEntry.ACTIVE)));
                     if (isActive == 1) {
-                        LoginConsumer.estudiante.setUsuario(c.getString(c.getColumnIndex(UserSessionEntry.USER)));
-                        LoginConsumer.estudiante.setApellido(c.getString(c.getColumnIndex(UserSessionEntry.LASTNAME)));
-                        LoginConsumer.estudiante.setCorreo(c.getString(c.getColumnIndex(UserSessionEntry.EMAIL)));
-                        LoginConsumer.estudiante.setNombre(c.getString(c.getColumnIndex(UserSessionEntry.NAME)));
-                        LoginConsumer.estudiante.setCodigo(c.getString(c.getColumnIndex(UserSessionEntry.CODIGO)));
-                        estudiante = new Estudiante(LoginConsumer.estudiante.getNombre(), LoginConsumer.estudiante.getApellido(),
+                        estudiante.setUsuario(c.getString(c.getColumnIndex(UserSessionEntry.USER)));
+                        estudiante.setApellido(c.getString(c.getColumnIndex(UserSessionEntry.LASTNAME)));
+                        estudiante.setCorreo(c.getString(c.getColumnIndex(UserSessionEntry.EMAIL)));
+                        estudiante.setNombre(c.getString(c.getColumnIndex(UserSessionEntry.NAME)));
+                        estudiante.setCodigo(c.getString(c.getColumnIndex(UserSessionEntry.CODIGO)));
+                        estudiante_ = new Estudiante(LoginConsumer.estudiante.getNombre(), LoginConsumer.estudiante.getApellido(),
                                  LoginConsumer.estudiante.getCorreo(),LoginConsumer.estudiante.getUsuario(),LoginConsumer.estudiante.getCodigo());
-
-                        return estudiante;
+                        Log.i("Codigo Estudiante", estudiante_.getCodigo());
+                        return estudiante_;
                     }
                 }
             } catch (Exception e) {
@@ -165,6 +164,5 @@ public class LoginConsumer {
         }
         return null;
     }
-
 
 }

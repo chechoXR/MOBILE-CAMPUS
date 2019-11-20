@@ -24,8 +24,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        //Verifica si el usuario se encuentra logeado.
-        if(checkSession())LoginConsumer.nextStep(true,this);
+
         username = (EditText) findViewById(R.id.usuario);
         password = (EditText) findViewById(R.id.contrasena);
         submit = (Button) findViewById(R.id.boton_ingresar);
@@ -64,6 +63,8 @@ public class Login extends AppCompatActivity {
     private boolean checkSession(){
         UserSessionDbHelper session = new UserSessionDbHelper(this.getApplicationContext());
         SQLiteDatabase db = session.getReadableDatabase();
+        session.onCreate(db);
+
         //Retorna todos los datos que se encuentran en la base de datos
         Cursor c = db.rawQuery("SELECT * FROM "+UserSessionEntry.TABLE_NAME,null);
         if(c!=null && c.getColumnCount()!=0) {
@@ -76,6 +77,7 @@ public class Login extends AppCompatActivity {
                         LoginConsumer.estudiante.setApellido(c.getString(c.getColumnIndex(UserSessionEntry.LASTNAME)));
                         LoginConsumer.estudiante.setCorreo(c.getString(c.getColumnIndex(UserSessionEntry.EMAIL)));
                         LoginConsumer.estudiante.setNombre(c.getString(c.getColumnIndex(UserSessionEntry.NAME)));
+                        LoginConsumer.estudiante.setCodigo(c.getString(c.getColumnIndex(UserSessionEntry.CODIGO)));
                         return true;
                     }
                 }
@@ -87,5 +89,14 @@ public class Login extends AppCompatActivity {
         return false;
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(checkSession()){
+            //Verifica si el usuario se encuentra logeado.
+            LoginConsumer.nextStep(true,this);
+            LoginConsumer.getCurrentSession(this);
+        }
+        return;
+    }
 }
